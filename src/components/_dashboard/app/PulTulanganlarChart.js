@@ -9,17 +9,17 @@ import { BaseOptionChart } from '../../charts';
 
 const CHART_DATA = [
   {
-    name: 'Team A',
+    name: '951-19-guruh',
     type: 'column',
     data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30]
   },
   {
-    name: 'Team B',
+    name: '943-21-guruh',
     type: 'area',
     data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43]
   },
   {
-    name: 'Team C',
+    name: '915-18-guruh',
     type: 'line',
     data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
   }
@@ -60,7 +60,7 @@ export default function AppWebsiteVisits() {
 
   return (
     <Card>
-      <CardHeader title="Website Visits" subheader="(+43%) than last year" />
+      <CardHeader title="Pul to'lagan talabalar" subheader="Oy hisobida" />
       <Box sx={{ p: 3, pb: 1 }} dir="ltr">
         <ReactApexChart type="line" series={CHART_DATA} options={chartOptions} height={364} />
       </Box>
