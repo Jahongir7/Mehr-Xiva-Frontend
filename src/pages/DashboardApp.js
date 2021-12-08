@@ -7,7 +7,6 @@ import {
   AppNewUsers,
   AppBugReports,
   AppItemOrders,
-  AppNewsUpdate,
   AppWeeklySales,
   AppOrderTimeline,
   AppCurrentVisits,
@@ -45,10 +44,6 @@ export default function DashboardApp() {
 
           <Grid item xs={12} md={6} lg={12}>
             <AppConversionRates />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={8}>
-            <AppNewsUpdate />
           </Grid>
 
           <Grid item xs={12} md={6} lg={4}>
