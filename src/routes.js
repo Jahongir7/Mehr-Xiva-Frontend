@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import DashboardApp from './pages/DashboardApp';
 import Products from './pages/Products';
-import Blog from './pages/Blog';
+import Blog from './pages/Hisobot';
 import User from './pages/User';
 import NotFound from './pages/Page404';
 // eslint-disable-next-line import/no-named-as-default
