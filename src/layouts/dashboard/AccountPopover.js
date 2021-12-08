@@ -110,7 +110,7 @@ export default function AccountPopover() {
         ))}
 
         <Box sx={{ p: 2, pt: 1.5 }}>
-          <Link underline="none" to="/login">
+          <Link to="/login" style={{ textDecoration: 'none' }}>
             <Button fullWidth color="inherit" variant="outlined">
               Chiqish
             </Button>

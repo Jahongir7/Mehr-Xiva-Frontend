@@ -11,7 +11,7 @@ const users = [...Array(24)].map((_, index) => ({
   name: faker.name.findName(),
   company: faker.company.companyName(),
   isVerified: faker.datatype.boolean(),
-  status: sample(['active', 'banned']),
+  status: sample(['To`langan', 'To`lanmagan']),
   role: sample([
     'Leader',
     'Hr Manager',

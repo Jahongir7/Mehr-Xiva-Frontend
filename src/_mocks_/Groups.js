@@ -23,7 +23,35 @@ export const data = [
     link: '/teacher/group3'
   },
   {
-    id: 4,
+    id: 4222,
+    name: 'Ingliz juft kun',
+    num: 18,
+    mentor: 'Temurbek Adhamov',
+    link: '/teacher/group4'
+  },
+  {
+    id: 21,
+    name: 'Arab tili 1',
+    num: 17,
+    mentor: 'Temurbek Adhamov',
+    link: '/teacher/group1'
+  },
+  {
+    id: 32,
+    name: 'Arab tili 2',
+    num: 15,
+    mentor: 'Temurbek Adhamov',
+    link: '/teacher/group2'
+  },
+  {
+    id: 35,
+    name: 'Ingliz toq kun',
+    num: 20,
+    mentor: 'Temurbek Adhamov',
+    link: '/teacher/group3'
+  },
+  {
+    id: 45,
     name: 'Ingliz juft kun',
     num: 18,
     mentor: 'Temurbek Adhamov',
