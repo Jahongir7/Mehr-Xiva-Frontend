@@ -44,7 +44,7 @@ export default function AppConversionRates() {
   return (
     <Card>
       <CardHeader
-        title="Ijarada turuvchilar"
+        title="Ijarada turuvchilar soni ( umumiy )"
         subheader="Oylarni talabalar soniga bog'liqlik grafigi"
       />
       <Box sx={{ mx: 3 }} dir="ltr">
