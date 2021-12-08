@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import homeFill from '@iconify/icons-eva/home-fill';
 import personFill from '@iconify/icons-eva/person-fill';
 import settings2Fill from '@iconify/icons-eva/settings-2-fill';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, Link } from 'react-router-dom';
 // material
 import { alpha } from '@mui/material/styles';
 import { Button, Box, Divider, MenuItem, Typography, Avatar, IconButton } from '@mui/material';
@@ -16,17 +16,17 @@ import account from '../../_mocks_/account';
 
 const MENU_OPTIONS = [
   {
-    label: 'Home',
+    label: 'Bosh sahifa',
     icon: homeFill,
     linkTo: '/'
   },
   {
-    label: 'Profile',
+    label: 'Profil',
     icon: personFill,
     linkTo: '#'
   },
   {
-    label: 'Settings',
+    label: 'Sozlamalar',
     icon: settings2Fill,
     linkTo: '#'
   }
@@ -110,9 +110,11 @@ export default function AccountPopover() {
         ))}
 
         <Box sx={{ p: 2, pt: 1.5 }}>
-          <Button fullWidth color="inherit" variant="outlined">
-            Chiqish
-          </Button>
+          <Link underline="none" to="/login">
+            <Button fullWidth color="inherit" variant="outlined">
+              Chiqish
+            </Button>
+          </Link>
         </Box>
       </MenuPopover>
     </>
