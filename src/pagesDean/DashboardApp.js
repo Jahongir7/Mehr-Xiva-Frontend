@@ -5,19 +5,15 @@ import Page from '../components/Page';
 import {
   AppTasks,
   AppNewUsers,
-  AppBugReports,
-  AppItemOrders,
   AppWeeklySales,
   AppCurrentVisits,
   AppWebsiteVisits,
-  AppConversionRates,
-  YotoqxonaCard,
-  UydagilarCard
-} from '../components/_dashboard/app';
+  YotoqxonaCard
+} from '../components/dean/app';
 
 // ----------------------------------------------------------------------
 
-export default function DashboardApp() {
+export default function DeanApp() {
   return (
     <Page title="Dashboard | Minimal-UI">
       <Container maxWidth="xl">
@@ -28,17 +24,9 @@ export default function DashboardApp() {
           <Grid item xs={12} sm={6} md={4}>
             <AppNewUsers />
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <AppItemOrders />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <AppBugReports />
-          </Grid>
+
           <Grid item xs={12} sm={6} md={4}>
             <YotoqxonaCard />
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <UydagilarCard />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>
@@ -47,10 +35,6 @@ export default function DashboardApp() {
 
           <Grid item xs={12} md={6} lg={4}>
             <AppCurrentVisits />
-          </Grid>
-
-          <Grid item xs={12} md={6} lg={12}>
-            <AppConversionRates />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>

@@ -21,7 +21,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   )} 100%)`
 }));
 
-export default function Groups() {
+export default function DeanGroups() {
   return (
     <div>
       <h2 style={{ paddingLeft: '10px' }}>Guruhlar</h2>
