@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import CountUp from 'react-countup';
+import { Link } from 'react-router-dom';
 import classes from '../css/Groups.module.css';
 import { data } from '../_mocks_/Groups';
 
@@ -9,7 +10,7 @@ export default function Groups() {
       <h2 style={{ paddingLeft: '10px' }}>Guruhlar</h2>
       <div className={classes.group_lists}>
         {data.map((item) => (
-          <div style={{ textDecoration: 'none' }} key={item.id}>
+          <Link to={item.link} style={{ textDecoration: 'none', cursor: 'pointer' }} key={item.id}>
             <div className={classes.group_list} key={item.id}>
               <div className={classes.num}>
                 <div className={classes.hh2}>
@@ -24,7 +25,7 @@ export default function Groups() {
                 <p>Guruh nomi</p>
               </div>{' '}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
