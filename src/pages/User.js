@@ -33,9 +33,9 @@ import USERLIST from '../_mocks_/user';
 
 const TABLE_HEAD = [
   { id: 'Ism', label: 'Talaba', alignRight: false },
-  { id: 'company', label: 'Company', alignRight: false },
-  { id: 'role', label: 'Role', alignRight: false },
-  { id: 'isVerified', label: 'Verified', alignRight: false },
+  { id: 'company', label: 'Uy manzili', alignRight: false },
+  { id: 'role', label: 'Ijara manzili', alignRight: false },
+  { id: 'isVerified', label: 'Ijarada turadimi', alignRight: false },
   { id: 'status', label: "To'lov", alignRight: false },
   { id: '' }
 ];
