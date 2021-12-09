@@ -4,7 +4,6 @@ import DashboardLayout from './layouts/dashboard';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 //
 import Login from './pages/Login';
-import Register from './pages/Register';
 import DashboardApp from './pages/DashboardApp';
 import Products from './pages/Products';
 import Blog from './pages/Hisobot';
@@ -12,6 +11,7 @@ import User from './pages/User';
 import NotFound from './pages/Page404';
 // eslint-disable-next-line import/no-named-as-default
 import Groups from './pages/Groups';
+import Group1 from './pages/Group1';
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +26,8 @@ export default function Router() {
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },
-        { path: 'groups', element: <Groups /> }
+        { path: 'groups', element: <Groups /> },
+        { path: 'group1', element: <Group1 /> }
       ]
     },
     {
@@ -34,7 +35,6 @@ export default function Router() {
       element: <LogoOnlyLayout />,
       children: [
         { path: 'login', element: <Login /> },
-        { path: 'register', element: <Register /> },
         { path: '404', element: <NotFound /> },
         { path: '/', element: <Navigate to="/dashboard" /> },
         { path: '*', element: <Navigate to="/404" /> }
