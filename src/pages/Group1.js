@@ -12,7 +12,9 @@ export default function Group1() {
           </div>
           <div className={classes.karta}>Familiyasi</div>
           <div className={classes.founderPayment}>Telefon raqami</div>
-          <div className={classes.founderDate}>Ijaraga turgan kuni</div>
+          <div className={classes.founderDate}>Ijaraga turgan vaqti</div>
+          <div className={classes.founderDate}>Imtiyoz</div>
+          <div className={classes.founderDate}>Hozirgi yashash joyi</div>
           <div className={classes.founderDate}>To'lov</div>
         </div>
         <div className={classes.data}>
@@ -24,6 +26,9 @@ export default function Group1() {
               <div className={classes.karta}>{item.surname}</div>
               <div className={classes.founderPayment}>{item.tel}</div>
               <div className={classes.founderDate}>{item.date}</div>
+
+              <div className={classes.founderDate}>{item.imtiyoz}</div>
+              <div className={classes.founderDate}>{item.type}</div>
               <div className={classes.founderButtons}>
                 <div
                   style={{

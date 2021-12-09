@@ -23,7 +23,7 @@
 }
 .item {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   background-color: white;
   padding: 20px;
@@ -114,7 +114,7 @@
 }
 .item_head {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   background-color: #f3f2f7;
   padding: 20px;
@@ -136,4 +136,8 @@
     overflow: auto;
     width: 700px;
   }
+}
+.groupWrap {
+  width: 1200px;
+  overflow: auto;
 }
