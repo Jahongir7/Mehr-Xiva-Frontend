@@ -11,7 +11,9 @@ import {
   AppOrderTimeline,
   AppCurrentVisits,
   AppWebsiteVisits,
-  AppConversionRates
+  AppConversionRates,
+  YotoqxonaCard,
+  UydagilarCard
 } from '../components/_dashboard/app';
 
 // ----------------------------------------------------------------------
@@ -21,17 +23,23 @@ export default function DashboardApp() {
     <Page title="Dashboard | Minimal-UI">
       <Container maxWidth="xl">
         <Grid container spacing={3}>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={4}>
             <AppWeeklySales />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={4}>
             <AppNewUsers />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={4}>
             <AppItemOrders />
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid item xs={12} sm={6} md={4}>
             <AppBugReports />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <YotoqxonaCard />
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <UydagilarCard />
           </Grid>
 
           <Grid item xs={12} md={6} lg={8}>

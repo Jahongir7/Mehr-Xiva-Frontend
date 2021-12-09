@@ -10,3 +10,5 @@ export { default as AppTasks } from './AppTasks';
 export { default as AppTrafficBySite } from './AppTrafficBySite';
 export { default as AppWebsiteVisits } from './PulTulanganlarChart';
 export { default as AppWeeklySales } from './GruhlarSoniCard';
+export { default as UydagilarCard } from './UydagilarCard';
+export { default as YotoqxonaCard } from './YotoqxonaCard';
