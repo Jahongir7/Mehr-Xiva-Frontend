@@ -12,6 +12,7 @@ export default function Waiters() {
           </div>
           <div className={classes.karta}>Familiyasi</div>
           <div className={classes.founderDate}>Ariza yozgan vaqti</div>
+          <div className={classes.founderDate}>Shartnoma raqami</div>
           <div className={classes.founderDate}>Imtiyoz</div>
         </div>
         <div className={classes.data}>
@@ -22,6 +23,7 @@ export default function Waiters() {
               </div>
               <div className={classes.karta}>{item.surname}</div>
               <div className={classes.founderDate}>{item.date}</div>
+              <div className={classes.founderDate}>{item.contractNum}</div>
               <div className={classes.founderDate}>{item.imtiyoz}</div>
             </div>
           ))}

@@ -37,7 +37,7 @@ export default function Blog() {
           <Icon icon="emojione:dollar-banknote" width="24" height="24" />
         </IconWrapperStyle>
         <h1>3,150,000</h1>
-        <p>Umumiy to'langan pul</p>
+        <p>Umumiy to'langan pul ( Setyabr(2021) - Dekabr(2021) )</p>
       </div>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6} md={3}>
