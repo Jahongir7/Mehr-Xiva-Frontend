@@ -5,6 +5,17 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useFormik, Form, FormikProvider } from 'formik';
 import { LoadingButton } from '@mui/lab';
+import {
+  Stack,
+  Checkbox,
+  TextField,
+  IconButton,
+  InputAdornment,
+  FormControlLabel
+} from '@mui/material';
+import { Icon } from '@iconify/react';
+import eyeFill from '@iconify/icons-eva/eye-fill';
+import eyeOffFill from '@iconify/icons-eva/eye-off-fill';
 import classes from '../../../css/LoginInput.module.css';
 
 // ----------------------------------------------------------------------
@@ -47,32 +58,37 @@ export default function LoginForm() {
   return (
     <FormikProvider value={formik}>
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-        <div className={classes.flex}>
-          <div className={classes.column_input}>
-            <div className={classes.input_p}>
-              <p>Lavozim</p>
-            </div>
-            <input
-              type="text"
-              name="name"
-              onChange={onChange}
-              value={myInput}
-              placeholder="Lavozim"
-            />
-          </div>{' '}
-          <div className={classes.column_input}>
-            <div className={classes.input_p}>
-              <p>Parol</p>
-            </div>
-            <input
-              type="text"
-              name="surname"
-              onChange={onChange1}
-              value={myInput1}
-              placeholder="Parol"
-            />
-          </div>
-        </div>{' '}
+        <Stack spacing={3} style={{ marginBottom: 30 }}>
+          <TextField
+            fullWidth
+            autoComplete="username"
+            type="email"
+            label="Email address"
+            onChange={onChange}
+            value={myInput}
+          />
+
+          <TextField
+            fullWidth
+            autoComplete="current-password"
+            type={showPassword ? 'text' : 'password'}
+            label="Password"
+            onChange={onChange1}
+            value={myInput1}
+            {...getFieldProps('password')}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton onClick={handleShowPassword} edge="end">
+                    <Icon icon={showPassword ? eyeFill : eyeOffFill} />
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+            error={Boolean(touched.password && errors.password)}
+            helperText={touched.password && errors.password}
+          />
+        </Stack>
         <Link
           to={
             myInput === 'tutor'

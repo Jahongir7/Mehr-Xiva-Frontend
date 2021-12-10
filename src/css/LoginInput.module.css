@@ -289,3 +289,45 @@ form input:focus {
 .hr {
   border-bottom: 1px solid #3a3985 !important;
 }
+*,
+*:focus {
+  outline: none;
+}
+
+.form_item {
+  position: relative;
+  margin-bottom: 15px;
+}
+.form_item input {
+  display: block;
+  width: 400px;
+  height: 40px;
+  background: transparent;
+  border: solid 1px #ccc;
+  transition: all 0.3s ease;
+  padding: 0 15px;
+}
+.form_item input:focus {
+  border-color: blue;
+}
+.form_item label {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 13px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #fff;
+  padding: 0 10px;
+  color: #999;
+  transition: all 0.3s ease;
+}
+.form_item input:focus + label,
+.form_item input:valid + label {
+  font-size: 11px;
+  top: -5px;
+}
+.form_item input:focus + label {
+  color: blue;
+}
