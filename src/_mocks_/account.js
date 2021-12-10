@@ -2,15 +2,23 @@
 
 const account = {
   displayName: 'Jasurbek Saidov',
-  email: 'demo@minimals.cc',
+  email: 'info@ubtuit.uz',
   photoURL: '/static/mock-images/avatars/avatar_default.jpg',
   role: 'Tutor'
 };
+
 export const Accountdean = {
   displayName: 'Alisher Hakimov',
-  email: 'demo@minimals.cc',
+  email: 'info@ubtuit.uz',
   photoURL: '/static/mock-images/avatars/avatar_default.jpg',
   role: 'Dekan'
 };
 
 export default account;
+
+export const ministry = {
+  displayName: 'Shuxrat Sodiqov',
+  email: 'info@ubtuit.uz',
+  photoURL: '/static/mock-images/avatars/avatar_default.jpg',
+  role: 'Vazirlik'
+};

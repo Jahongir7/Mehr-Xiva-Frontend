@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-unused-vars */
 import * as Yup from 'yup';
 import { useState } from 'react';
@@ -73,7 +74,13 @@ export default function LoginForm() {
           </div>
         </div>{' '}
         <Link
-          to={myInput === 'tutor' ? '/dashboard/app' : '/dean/app'}
+          to={
+            myInput === 'tutor'
+              ? '/dashboard/app'
+              : myInput === 'dekan'
+              ? '/dean/app'
+              : '/ministry/app'
+          }
           style={{ textDecoration: 'none' }}
         >
           <LoadingButton
