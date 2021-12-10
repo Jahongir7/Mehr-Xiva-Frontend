@@ -1,14 +1,13 @@
 import { Icon } from '@iconify/react';
 import { Grid } from '@mui/material';
 import { alpha, styled } from '@mui/material/styles';
-import Waiters from '../components/_dashboard/hisobot/Waiters';
 
 import {
   AppNewUsers,
   AppBugReports,
   AppItemOrders,
   AppWeeklySales
-} from '../components/dean/hisobot';
+} from '../components/ministry/hisobot';
 
 import classes from '../css/Hisobot.module.css';
 
@@ -29,14 +28,14 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
     0.24
   )} 100%)`
 }));
-export default function DeanBlog() {
+export default function MinistryHisobot() {
   return (
     <div className={classes.myContainer}>
       <div className={classes.allSum}>
         <IconWrapperStyle>
           <Icon icon="emojione:dollar-banknote" width="24" height="24" />
         </IconWrapperStyle>
-        <h1>3,150,000</h1>
+        <h1>53,150,000</h1>
         <p>Umumiy to'langan pul ( Setyabr(2021) - Dekabr(2021) )</p>
       </div>
       <Grid container spacing={3}>
@@ -53,7 +52,6 @@ export default function DeanBlog() {
           <AppBugReports />
         </Grid>
       </Grid>
-      <Waiters />
     </div>
   );
 }

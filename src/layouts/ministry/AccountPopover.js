@@ -10,7 +10,7 @@ import { Button, Box, Divider, MenuItem, Typography, Avatar, IconButton } from '
 // components
 import MenuPopover from '../../components/MenuPopover';
 //
-import {ministry} from '../../_mocks_/account';
+import { Accountministr, ministry } from '../../_mocks_/account';
 // ----------------------------------------------------------------------
 
 const MENU_OPTIONS = [
@@ -77,10 +77,10 @@ export default function AccountPopover() {
       >
         <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle1" noWrap>
-            {ministry.displayName}
+            {Accountministr.displayName}
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-            {ministry.email}
+            {Accountministr.email}
           </Typography>
         </Box>
 

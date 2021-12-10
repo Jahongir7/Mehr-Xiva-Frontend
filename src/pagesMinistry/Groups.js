@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { alpha, styled } from '@mui/material/styles';
 import CountUp from 'react-countup';
-import { FacultiesData } from '../_mocks_/Faculities';
+import { UniversitiesData } from '../_mocks_/Universities';
 import classes from '../css/Groups.module.css';
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
@@ -20,12 +20,12 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   )} 100%)`
 }));
 
-export default function DeanGroups() {
+export default function MinistryGroups() {
   return (
     <div>
-      <h2 style={{ paddingLeft: '10px' }}>Fakultetlar</h2>
+      <h2 style={{ paddingLeft: '10px' }}>Universitetlar</h2>
       <div className={classes.group_lists}>
-        {FacultiesData.map((item) => (
+        {UniversitiesData.map((item) => (
           <div className={classes.group_list} key={item.id}>
             <div className={classes.num}>
               <IconWrapperStyle>
@@ -33,11 +33,11 @@ export default function DeanGroups() {
                   <CountUp end={item.num} duration={3} />
                 </h2>
               </IconWrapperStyle>{' '}
-              <p>Guruhlar soni</p>
+              <p>Fakultetlar soni</p>
             </div>
             <div className={classes.name}>
               <h1>{item.name}</h1>
-              <p>Fakultet nomi</p>
+              <p>Universitet nomi</p>
             </div>{' '}
           </div>
         ))}

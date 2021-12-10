@@ -10,22 +10,22 @@ const getIcon = (name) => <Icon icon={name} width={22} height={22} />;
 const sidebarConfig = [
   {
     title: 'Statistika',
-    path: '/dashboard/app',
+    path: '/ministry/app',
     icon: getIcon(pieChart2Fill)
   },
   {
-    title: "O'quvchilar",
-    path: '/dashboard/user',
+    title: 'Direktorlar',
+    path: '/ministry/user',
     icon: getIcon(peopleFill)
   },
   {
     title: 'Guruhlarim',
-    path: '/dashboard/groups',
+    path: '/ministry/groups',
     icon: <Icon icon="clarity:users-solid" width="64" height="64" />
   },
   {
     title: 'Hisobot',
-    path: '/dashboard/blog',
+    path: '/ministry/blog',
     icon: getIcon(fileTextFill)
   }
 ];

@@ -9,13 +9,13 @@ import {
   AppCurrentVisits,
   AppWebsiteVisits,
   YotoqxonaCard
-} from '../components/dean/app';
+} from '../components/ministry/app';
 
 // ----------------------------------------------------------------------
 
 export default function DeanApp() {
   return (
-    <Page title="Dashboard | Minimal-UI">
+    <Page title="Vazirlik">
       <Container maxWidth="xl">
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6} md={4}>

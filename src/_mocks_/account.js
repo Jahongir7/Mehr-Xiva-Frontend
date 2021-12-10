@@ -13,6 +13,12 @@ export const Accountdean = {
   photoURL: '/static/mock-images/avatars/avatar_default.jpg',
   role: 'Dekan'
 };
+export const Accountministr = {
+  displayName: 'Jalolbek Karimov',
+  email: 'info@ubtuit.uz',
+  photoURL: '/static/mock-images/avatars/avatar_default.jpg',
+  role: 'Vazirlik hodimi'
+};
 
 export default account;
 
