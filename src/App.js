@@ -8,6 +8,7 @@ import ScrollToTop from './components/ScrollToTop';
 import { BaseOptionChartStyle } from './components/charts/BaseOptionChart';
 
 // ----------------------------------------------------------------------
+import './css/main.css'
 
 export default function App() {
   return (

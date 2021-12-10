@@ -4,7 +4,7 @@ const account = {
   displayName: 'Jasurbek Saidov',
   email: 'info@ubtuit.uz',
   photoURL: '/static/mock-images/avatars/avatar_default.jpg',
-  role: 'Tutor'
+  role: 'Tarbiyachi'
 };
 
 export const Accountdean = {

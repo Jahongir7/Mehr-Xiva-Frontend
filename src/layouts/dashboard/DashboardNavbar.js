@@ -7,9 +7,9 @@ import { Box, Stack, AppBar, Toolbar, IconButton } from '@mui/material';
 // components
 import { MHidden } from '../../components/@material-extend';
 //
-import Searchbar from './Searchbar';
+import Searchbar from '../Searchbar';
 import AccountPopover from './AccountPopover';
-import NotificationsPopover from './NotificationsPopover';
+import NotificationsPopover from '../NotificationsPopover';
 
 // ----------------------------------------------------------------------
 

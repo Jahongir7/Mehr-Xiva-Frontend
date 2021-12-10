@@ -33,7 +33,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const TOTAL = 174554;
+const TOTAL = 274554;
 
 export default function AppWeeklySales() {
   return (

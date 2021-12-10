@@ -1,60 +1,60 @@
 // material
-import { Grid, Container } from "@mui/material";
+import {Container, Grid} from "@mui/material";
 // components
-import Page from "../components/Page";
+import Page from "../../components/Page";
 import {
-    AppTasks,
-    AppNewUsers,
     AppBugReports,
-    AppItemOrders,
-    AppWeeklySales,
-    AppCurrentVisits,
-    AppWebsiteVisits,
     AppConversionRates,
-    YotoqxonaCard,
+    AppItemOrders,
+    AppNewUsers,
+    AppTasks,
+    AppWebsiteVisits,
+    AppWeeklySales,
+    StudentDistributionChart,
     UydagilarCard,
-} from "../components/_dashboard/app";
+    YotoqxonaCard,
+} from "../../components/_dashboard/app";
 
 // ----------------------------------------------------------------------
 
-export default function DashboardApp() {
+export default function Statistics() {
     return (
-        <Page title="Dashboard | Minimal-UI">
+        <Page title="Tarbiyachi">
             <Container maxWidth="xl">
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6} md={4}>
-                        <AppWeeklySales />
+                        <AppWeeklySales/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                        <AppNewUsers />
+                        <AppNewUsers/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                        <AppItemOrders />
+                        <AppItemOrders/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                        <AppBugReports />
+                        <AppBugReports/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                        <YotoqxonaCard />
+                        <YotoqxonaCard/>
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
-                        <UydagilarCard />
+                        <UydagilarCard/>
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={8}>
-                        <AppWebsiteVisits />
+                        <AppWebsiteVisits/>
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={4}>
-                        <AppCurrentVisits />
+                        <StudentDistributionChart/>
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={12}>
-                        <AppConversionRates />
+                        <AppConversionRates/>
                     </Grid>
 
                     <Grid item xs={12} md={6} lg={8}>
-                        <AppTasks />
+                        <AppTasks/>
                     </Grid>
                 </Grid>
             </Container>

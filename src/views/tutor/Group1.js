@@ -1,5 +1,5 @@
-import classes from '../css/Group1.module.css';
-import { Group } from '../_mocks_/Group1';
+import classes from '../../css/Group1.module.css';
+import { Group } from '../../_mocks_/Group1';
 
 export default function Group1() {
   return (

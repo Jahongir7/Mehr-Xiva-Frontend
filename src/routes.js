@@ -3,19 +3,19 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import DashboardLayout from './layouts/dashboard';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 import MinistryDashboard from './layouts/ministry';
-import Login from './pages/Login';
+import Login from './views/tutor/Login';
 
 // Tutor
-import DashboardApp from './pages/DashboardApp';
-import Products from './pages/Products';
-import Blog from './pages/Hisobot';
-import User from './pages/User';
-import NotFound from './pages/Page404';
+import Statistics from './views/tutor/Statistics';
+import Products from './views/tutor/Products';
+import Blog from './views/tutor/Hisobot';
+import User from './views/tutor/User';
+import NotFound from './views/tutor/Page404';
 
 // eslint-disable-next-line import/no-named-as-default
 // Dean
-import Groups from './pages/Groups';
-import Group1 from './pages/Group1';
+import Groups from './views/tutor/Groups';
+import Group1 from './views/tutor/Group1';
 import DeanLayout from './layouts/dean';
 import DeanApp from './pagesDean/DashboardApp';
 import DeanUser from './pagesDean/User';
@@ -27,9 +27,6 @@ import MinistryDash from './pagesMinistry/DashboardApp';
 import MinistryUser from './pagesMinistry/User';
 import MinistryGroups from './pagesMinistry/Groups';
 import MinistryHisobot from './pagesMinistry/Hisobot';
-// import Products from './pages/Products';
-// import Blog from './pages/Hisobot';
-// import User from './pages/User';
 
 // ----------------------------------------------------------------------
 
@@ -50,7 +47,7 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to="/login" replace /> },
-        { path: 'app', element: <DashboardApp /> },
+        { path: 'app', element: <Statistics /> },
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },

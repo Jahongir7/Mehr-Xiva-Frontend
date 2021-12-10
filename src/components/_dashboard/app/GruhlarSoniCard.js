@@ -11,8 +11,8 @@ const RootStyle = styled(Card)(({ theme }) => ({
   boxShadow: 'none',
   textAlign: 'center',
   padding: theme.spacing(5, 0),
-  color: theme.palette.primary.darker,
-  backgroundColor: theme.palette.primary.lighter
+  color: theme.palette.warning.darker,
+  backgroundColor: theme.palette.warning.lighter
 }));
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
@@ -24,9 +24,9 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   height: theme.spacing(8),
   justifyContent: 'center',
   marginBottom: theme.spacing(3),
-  color: theme.palette.primary.dark,
-  backgroundImage: `linear-gradient(135deg, ${alpha(theme.palette.primary.dark, 0)} 0%, ${alpha(
-    theme.palette.primary.dark,
+  color: theme.palette.warning.dark,
+  backgroundImage: `linear-gradient(135deg, ${alpha(theme.palette.warning.dark, 0)} 0%, ${alpha(
+    theme.palette.warning.dark,
     0.24
   )} 100%)`
 }));

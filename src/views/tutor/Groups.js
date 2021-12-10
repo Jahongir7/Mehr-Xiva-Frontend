@@ -2,8 +2,8 @@
 import { alpha, styled } from '@mui/material/styles';
 import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
-import classes from '../css/Groups.module.css';
-import { data } from '../_mocks_/Groups';
+import classes from '../../css/Groups.module.css';
+import { data } from '../../_mocks_/Groups';
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
   margin: 'auto',

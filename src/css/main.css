@@ -1,0 +1,7 @@
+.apexcharts-legend-text {
+    text-transform: inherit !important;
+}
+
+.pie-grid > div {
+    height: 100%;
+}

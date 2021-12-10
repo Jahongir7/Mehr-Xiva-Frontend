@@ -9,7 +9,7 @@ import Scrollbar from '../../components/Scrollbar';
 import NavSection from '../../components/NavSection';
 import { MHidden } from '../../components/@material-extend';
 //
-import sidebarConfig from './SidebarConfig';
+import {dean} from '../../utils/menu';
 import { Accountdean } from '../../_mocks_/account';
 
 // ----------------------------------------------------------------------
@@ -72,7 +72,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         </Link>
       </Box>
 
-      <NavSection navConfig={sidebarConfig} />
+      <NavSection navConfig={dean} />
 
       <Box sx={{ flexGrow: 1 }} />
     </Scrollbar>

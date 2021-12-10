@@ -2,7 +2,24 @@ import { replace } from 'lodash';
 import numeral from 'numeral';
 
 // ----------------------------------------------------------------------
+numeral.register('locale', 'fr', {
+  delimiters: {
+    thousands: ' ',
+    decimal: ','
+  },
+  abbreviations: {
+    thousand: 'M',
+    million: 'm',
+    billion: 'b',
+    trillion: 't'
+  },
+  currency: {
+    symbol: '€'
+  }
+});
 
+// switch between locales
+numeral.locale('fr');
 export function fCurrency(number) {
   return numeral(number).format(Number.isInteger(number) ? '$0,0' : '$0,0.00');
 }
