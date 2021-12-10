@@ -30,7 +30,7 @@ export default function DeanGroups() {
             <div className={classes.num}>
               <IconWrapperStyle>
                 <h2>
-                  <CountUp end={item.num} duration={3} />
+                  <CountUp end={item.num} duration={1} />
                 </h2>
               </IconWrapperStyle>{' '}
               <p>Guruhlar soni</p>

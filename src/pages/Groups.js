@@ -32,7 +32,7 @@ export default function Groups() {
               <div className={classes.num}>
                 <IconWrapperStyle>
                   <h2>
-                    <CountUp end={item.num} duration={3} />
+                    <CountUp end={item.num} duration={1} />
                   </h2>
                 </IconWrapperStyle>{' '}
                 <p>O'quvchilar soni</p>

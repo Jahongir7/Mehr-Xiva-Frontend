@@ -6,7 +6,7 @@ import MinistryDashboard from './layouts/ministry';
 import Login from './pages/Login';
 
 // Tutor
-// import DashboardApp from './pages/DashboardApp';
+import DashboardApp from './pages/DashboardApp';
 import Products from './pages/Products';
 import Blog from './pages/Hisobot';
 import User from './pages/User';
@@ -50,7 +50,7 @@ export default function Router() {
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to="/login" replace /> },
-        { path: 'app', element: <MinistryDashboard /> },
+        { path: 'app', element: <DashboardApp /> },
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
         { path: 'blog', element: <Blog /> },
