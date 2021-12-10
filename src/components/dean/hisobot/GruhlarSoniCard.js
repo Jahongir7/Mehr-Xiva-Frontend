@@ -42,7 +42,7 @@ export default function AppWeeklySales() {
       </IconWrapperStyle>
       <Typography variant="h3">{TOTAL}</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        943-19-guruh
+        Komputer-injineringi
       </Typography>
     </RootStyle>
   );

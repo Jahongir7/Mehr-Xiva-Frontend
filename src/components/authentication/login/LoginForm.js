@@ -21,6 +21,7 @@ import { LoadingButton } from '@mui/lab';
 export default function LoginForm() {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
+  const [myInput, setMyInput] = useState('');
 
   const LoginSchema = Yup.object().shape({
     email: Yup.string().email('Eloktron pochta kiritilmadi').required('Emailni kiriting'),
@@ -44,7 +45,7 @@ export default function LoginForm() {
   const handleShowPassword = () => {
     setShowPassword((show) => !show);
   };
-
+  console.log(myInput);
   return (
     <FormikProvider value={formik}>
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
@@ -64,6 +65,8 @@ export default function LoginForm() {
             autoComplete="current-password"
             type={showPassword ? 'text' : 'password'}
             label="Parol"
+            value={myInput}
+            onChange={(e) => setMyInput(e.target.value)}
             {...getFieldProps('password')}
             InputProps={{
               endAdornment: (
@@ -85,7 +88,10 @@ export default function LoginForm() {
             label="Eslab qolish"
           />
         </Stack>
-        <Link to="/dashboard/app" style={{ textDecoration: 'none' }}>
+        <Link
+          to={myInput === 'a' ? '/dashboard/app' : '/dean/app'}
+          style={{ textDecoration: 'none' }}
+        >
           <LoadingButton
             fullWidth
             size="large"

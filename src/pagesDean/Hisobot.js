@@ -8,7 +8,7 @@ import {
   AppBugReports,
   AppItemOrders,
   AppWeeklySales
-} from '../components/_dashboard/hisobot';
+} from '../components/dean/hisobot';
 
 import classes from '../css/Hisobot.module.css';
 

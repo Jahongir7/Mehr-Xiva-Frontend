@@ -1,9 +1,8 @@
 /* eslint-disable prettier/prettier */
 import { alpha, styled } from '@mui/material/styles';
 import CountUp from 'react-countup';
-import { Link } from 'react-router-dom';
+import { FacultiesData } from '../_mocks_/Faculities';
 import classes from '../css/Groups.module.css';
-import { data } from '../_mocks_/Groups';
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
   margin: 'auto',
@@ -24,25 +23,23 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 export default function DeanGroups() {
   return (
     <div>
-      <h2 style={{ paddingLeft: '10px' }}>Guruhlar</h2>
+      <h2 style={{ paddingLeft: '10px' }}>Fakultetlar</h2>
       <div className={classes.group_lists}>
-        {data.map((item) => (
-          <Link to={item.link} style={{ textDecoration: 'none', cursor: 'pointer' }} key={item.id}>
-            <div className={classes.group_list} key={item.id}>
-              <div className={classes.num}>
-                <IconWrapperStyle>
-                  <h2>
-                    <CountUp end={item.num} duration={3} />
-                  </h2>
-                </IconWrapperStyle>{' '}
-                <p>O'quvchilar soni</p>
-              </div>
-              <div className={classes.name}>
-                <h1>{item.name}</h1>
-                <p>Guruh nomi</p>
-              </div>{' '}
+        {FacultiesData.map((item) => (
+          <div className={classes.group_list} key={item.id}>
+            <div className={classes.num}>
+              <IconWrapperStyle>
+                <h2>
+                  <CountUp end={item.num} duration={3} />
+                </h2>
+              </IconWrapperStyle>{' '}
+              <p>Guruhlar soni</p>
             </div>
-          </Link>
+            <div className={classes.name}>
+              <h1>{item.name}</h1>
+              <p>Fakultet nomi</p>
+            </div>{' '}
+          </div>
         ))}
       </div>
     </div>

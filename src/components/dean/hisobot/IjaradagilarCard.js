@@ -42,7 +42,7 @@ export default function AppBugReports() {
       </IconWrapperStyle>
       <Typography variant="h3">{TOTAL}</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        951-19-guruh
+        Dasturiy injineringi
       </Typography>
     </RootStyle>
   );

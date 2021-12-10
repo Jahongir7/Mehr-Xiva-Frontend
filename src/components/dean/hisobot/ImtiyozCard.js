@@ -42,7 +42,7 @@ export default function AppItemOrders() {
       </IconWrapperStyle>
       <Typography variant="h3">{TOTAL}</Typography>
       <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        915-19-guruh
+        Kasb ta'limi
       </Typography>
     </RootStyle>
   );

@@ -27,16 +27,16 @@ import Scrollbar from '../components/Scrollbar';
 import SearchNotFound from '../components/SearchNotFound';
 import { UserListHead, UserListToolbar, UserMoreMenu } from '../components/_dashboard/user';
 
-import USERLIST from '../_mocks_/user';
+import USERLIST from '../_mocks_/DeanUser';
 
 // ----------------------------------------------------------------------
 
 const TABLE_HEAD = [
   { id: 'Ism', label: 'Tutor', alignRight: false },
   { id: 'company', label: 'Fakulteti', alignRight: false },
-  { id: 'role', label: 'Guruhlari', alignRight: false },
+  { id: 'role', label: 'Manzili', alignRight: false },
   { id: 'isVerified', label: 'Ijarada turadimi', alignRight: false },
-  { id: 'status', label: "To'lov", alignRight: false },
+  { id: 'status', label: "Guruh uchun to'lov", alignRight: false },
   { id: '' }
 ];
 
