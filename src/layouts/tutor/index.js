@@ -6,8 +6,8 @@ import {styled} from '@mui/material/styles';
 import DashboardNavbar from '../DashboardNavbar';
 import DashboardSidebar from '../DashboardSidebar';
 
-import {ministry} from '../../utils/menu';
-import {ministry as account} from '../../utils/account'
+import tutor from '../../utils/menu';
+import {tutor as account} from '../../utils/account'
 
 // ----------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ export default function DashboardLayout() {
             <DashboardNavbar onOpenSidebar={() => setOpen(true)}
                              account={account}/>
             <DashboardSidebar isOpenSidebar={open} onCloseSidebar={() => setOpen(false)}
-                              sidebar_data={ministry} account={account}/>
+                              sidebar_data={tutor} account={account}/>
             <MainStyle>
                 <Outlet/>
             </MainStyle>

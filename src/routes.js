@@ -1,9 +1,9 @@
-import { Navigate, useRoutes } from 'react-router-dom';
+import {Navigate, useRoutes} from 'react-router-dom';
 // layouts
-import DashboardLayout from './layouts/dashboard';
+import DashboardLayout from './layouts/tutor';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 import MinistryDashboard from './layouts/ministry';
-import Login from './views/tutor/Login';
+import Login from './views/Login';
 
 // Tutor
 import Statistics from './views/tutor/Statistics';
@@ -12,7 +12,6 @@ import Blog from './views/tutor/Hisobot';
 import User from './views/tutor/User';
 import NotFound from './views/tutor/Page404';
 
-// eslint-disable-next-line import/no-named-as-default
 // Dean
 import Groups from './views/tutor/Groups';
 import Group1 from './views/tutor/Group1';
@@ -31,53 +30,53 @@ import MinistryHisobot from './pagesMinistry/Hisobot';
 // ----------------------------------------------------------------------
 
 export default function Router() {
-  return useRoutes([
-    {
-      path: '/dean',
-      element: <DeanLayout />,
-      children: [
-        { path: 'app', element: <DeanApp /> },
-        { path: 'user', element: <DeanUser /> },
-        { path: 'faculties', element: <DeanGroups /> },
-        { path: 'blog', element: <DeanBlog /> }
-      ]
-    },
-    {
-      path: '/dashboard',
-      element: <DashboardLayout />,
-      children: [
-        { element: <Navigate to="/login" replace /> },
-        { path: 'app', element: <Statistics /> },
-        { path: 'user', element: <User /> },
-        { path: 'products', element: <Products /> },
-        { path: 'blog', element: <Blog /> },
-        { path: 'groups', element: <Groups /> },
-        { path: 'group1', element: <Group1 /> }
-      ]
-    },
-    {
-      path: '/ministry',
-      element: <MinistryDashboard />,
-      children: [
-        { element: <Navigate to="/login" replace /> },
-        { path: 'app', element: <MinistryDash /> },
-        { path: 'user', element: <MinistryUser /> },
-        { path: 'products', element: <Products /> },
-        { path: 'blog', element: <MinistryHisobot /> },
-        { path: 'groups', element: <MinistryGroups /> },
-        { path: 'group1', element: <Group1 /> }
-      ]
-    },
-    {
-      path: '/',
-      element: <LogoOnlyLayout />,
-      children: [
-        { path: 'login', element: <Login /> },
-        { path: '404', element: <NotFound /> },
-        { path: '/', element: <Navigate to="/dashboard" /> },
-        { path: '*', element: <Navigate to="/404" /> }
-      ]
-    },
-    { path: '*', element: <Navigate to="/404" replace /> }
-  ]);
+    return useRoutes([
+        {
+            path: '/dean',
+            element: <DeanLayout/>,
+            children: [
+                {path: 'app', element: <DeanApp/>},
+                {path: 'user', element: <DeanUser/>},
+                {path: 'faculties', element: <DeanGroups/>},
+                {path: 'blog', element: <DeanBlog/>}
+            ]
+        },
+        {
+            path: '/tutor',
+            element: <DashboardLayout/>,
+            children: [
+                {element: <Navigate to="/login" replace/>},
+                {path: 'app', element: <Statistics/>},
+                {path: 'user', element: <User/>},
+                {path: 'products', element: <Products/>},
+                {path: 'blog', element: <Blog/>},
+                {path: 'groups', element: <Groups/>},
+                {path: 'group1', element: <Group1/>}
+            ]
+        },
+        {
+            path: '/ministry',
+            element: <MinistryDashboard/>,
+            children: [
+                {element: <Navigate to="/login" replace/>},
+                {path: 'app', element: <MinistryDash/>},
+                {path: 'user', element: <MinistryUser/>},
+                {path: 'products', element: <Products/>},
+                {path: 'blog', element: <MinistryHisobot/>},
+                {path: 'groups', element: <MinistryGroups/>},
+                {path: 'group1', element: <Group1/>}
+            ]
+        },
+        {
+            path: '/',
+            element: <LogoOnlyLayout/>,
+            children: [
+                {path: 'login', element: <Login/>},
+                {path: '404', element: <NotFound/>},
+                {path: '/', element: <Navigate to="/login"/>},
+                {path: '*', element: <Navigate to="/404"/>}
+            ]
+        },
+        {path: '*', element: <Navigate to="/404" replace/>}
+    ]);
 }

@@ -36,8 +36,8 @@ import MenuPopover from '../components/MenuPopover';
 const NOTIFICATIONS = [
     {
         id: faker.datatype.uuid(),
-        title: 'Your order is placed',
-        description: 'waiting for shipping',
+        title: 'Yangi talaba qo\u2018shildi',
+        description: 'Yotoqxonada turadi',
         avatar: null,
         type: 'order_placed',
         createdAt: set(new Date(), {hours: 10, minutes: 30}),
@@ -45,38 +45,11 @@ const NOTIFICATIONS = [
     },
     {
         id: faker.datatype.uuid(),
-        title: faker.name.findName(),
-        description: 'answered to your comment on the Minimal',
-        avatar: mockImgAvatar(2),
-        type: 'friend_interactive',
-        createdAt: sub(new Date(), {hours: 3, minutes: 30}),
-        isUnRead: true
-    },
-    {
-        id: faker.datatype.uuid(),
-        title: 'You have new message',
-        description: '5 unread messages',
+        title: 'Yangi talaba qo‘shildi',
+        description: '5 ta o\u2018qilmagan xat',
         avatar: null,
         type: 'chat_message',
         createdAt: sub(new Date(), {days: 1, hours: 3, minutes: 30}),
-        isUnRead: false
-    },
-    {
-        id: faker.datatype.uuid(),
-        title: 'You have new mail',
-        description: 'sent from Guido Padberg',
-        avatar: null,
-        type: 'mail',
-        createdAt: sub(new Date(), {days: 2, hours: 3, minutes: 30}),
-        isUnRead: false
-    },
-    {
-        id: faker.datatype.uuid(),
-        title: 'Delivery processing',
-        description: 'Your order is being shipped',
-        avatar: null,
-        type: 'order_shipped',
-        createdAt: sub(new Date(), {days: 3, hours: 3, minutes: 30}),
         isUnRead: false
     }
 ];
@@ -215,9 +188,9 @@ export default function NotificationsPopover() {
             >
                 <Box sx={{display: 'flex', alignItems: 'center', py: 2, px: 2.5}}>
                     <Box sx={{flexGrow: 1}}>
-                        <Typography variant="subtitle1">Notifications</Typography>
+                        <Typography variant="subtitle1">Bildirishnomalar</Typography>
                         <Typography variant="body2" sx={{color: 'text.secondary'}}>
-                            You have {totalUnRead} unread messages
+                            Sizda {totalUnRead} ta o&#8216;qilmagan xabar bor
                         </Typography>
                     </Box>
 
@@ -237,7 +210,7 @@ export default function NotificationsPopover() {
                         disablePadding
                         subheader={
                             <ListSubheader disableSticky sx={{py: 1, px: 2.5, typography: 'overline'}}>
-                                New
+                                Yangi
                             </ListSubheader>
                         }
                     >
@@ -250,7 +223,7 @@ export default function NotificationsPopover() {
                         disablePadding
                         subheader={
                             <ListSubheader disableSticky sx={{py: 1, px: 2.5, typography: 'overline'}}>
-                                Before that
+                                Bundan oldingilar
                             </ListSubheader>
                         }
                     >
@@ -264,7 +237,7 @@ export default function NotificationsPopover() {
 
                 <Box sx={{p: 1}}>
                     <Button fullWidth disableRipple component={RouterLink} to="#">
-                        View All
+                        Hammasi
                     </Button>
                 </Box>
             </MenuPopover>

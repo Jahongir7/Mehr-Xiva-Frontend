@@ -73,7 +73,7 @@ export default function UserListToolbar({ numSelected, filterName, onFilterName 
       )}
 
       {numSelected > 0 ? (
-        <Tooltip title="O'chirish">
+        <Tooltip title="O&#8216;chirish">
           <IconButton>
             <Icon icon={trash2Fill} />
           </IconButton>

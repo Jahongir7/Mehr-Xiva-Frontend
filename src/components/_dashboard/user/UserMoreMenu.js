@@ -33,7 +33,7 @@ export default function UserMoreMenu() {
           <ListItemIcon>
             <Icon icon={trash2Outline} width={24} height={24} />
           </ListItemIcon>
-          <ListItemText primary="O'chirish" primaryTypographyProps={{ variant: 'body2' }} />
+          <ListItemText primary="O&#8216;chirish" primaryTypographyProps={{ variant: 'body2' }} />
         </MenuItem>
 
         <MenuItem component={RouterLink} to="#" sx={{ color: 'text.secondary' }}>

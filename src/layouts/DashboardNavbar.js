@@ -5,11 +5,11 @@ import menu2Fill from '@iconify/icons-eva/menu-2-fill';
 import {alpha, styled} from '@mui/material/styles';
 import {AppBar, Box, IconButton, Stack, Toolbar} from '@mui/material';
 // components
-import {MHidden} from '../../components/@material-extend';
+import {MHidden} from '../components/@material-extend';
 //
-import Searchbar from '../Searchbar';
+import Searchbar from './Searchbar';
 import AccountPopover from './AccountPopover';
-import NotificationsPopover from '../NotificationsPopover';
+import NotificationsPopover from './NotificationsPopover';
 
 // ----------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ DashboardNavbar.propTypes = {
     onOpenSidebar: PropTypes.func
 };
 
-export default function DashboardNavbar({onOpenSidebar}) {
+export default function DashboardNavbar({onOpenSidebar, account}) {
     return (
         <RootStyle>
             <ToolbarStyle>
@@ -56,7 +56,7 @@ export default function DashboardNavbar({onOpenSidebar}) {
 
                 <Stack direction="row" alignItems="center" spacing={{xs: 0.5, sm: 1.5}}>
                     <NotificationsPopover/>
-                    <AccountPopover/>
+                    <AccountPopover account={account}/>
                 </Stack>
             </ToolbarStyle>
         </RootStyle>
