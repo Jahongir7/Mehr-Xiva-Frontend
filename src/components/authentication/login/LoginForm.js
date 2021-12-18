@@ -1,104 +1,106 @@
-import {useState} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
 import * as Yup from 'yup';
-import {Form, FormikProvider, useFormik} from 'formik';
-import {LoadingButton} from '@mui/lab';
-import {IconButton, InputAdornment, Stack, TextField,} from '@mui/material';
-import {Icon} from '@iconify/react';
+import { useState } from 'react';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import { useFormik, Form, FormikProvider } from 'formik';
+import { Icon } from '@iconify/react';
 import eyeFill from '@iconify/icons-eva/eye-fill';
 import eyeOffFill from '@iconify/icons-eva/eye-off-fill';
+// material
+import {
+  Link,
+  Stack,
+  Checkbox,
+  TextField,
+  IconButton,
+  InputAdornment,
+  FormControlLabel
+} from '@mui/material';
+import { LoadingButton } from '@mui/lab';
 
 // ----------------------------------------------------------------------
 
 export default function LoginForm() {
-    const navigate = useNavigate();
-    const [showPassword, setShowPassword] = useState(false);
-    const [myInput, setMyInput] = useState('');
-    const [myInput1, setMyInput1] = useState('');
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
-    const LoginSchema = Yup.object().shape({
-        email: Yup.string().email('Elektron pochta kiritilmadi').required('Emailni kiriting'),
-        password: Yup.string().required('Parolni kiriting')
-    });
+  const LoginSchema = Yup.object().shape({
+    email: Yup.string().email('Email must be a valid email address').required('Email is required'),
+    password: Yup.string().required('Password is required')
+  });
 
-    const formik = useFormik({
-        initialValues: {
-            email: '',
-            password: '',
-            remember: true
-        },
-        validationSchema: LoginSchema,
-        onSubmit: () => {
-            navigate('/tutor', {replace: true});
-        }
-    });
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+      remember: true
+    },
+    validationSchema: LoginSchema,
+    onSubmit: () => {
+      navigate('/dashboard', { replace: true });
+    }
+  });
 
-    const {errors, touched, values, isSubmitting, handleSubmit, getFieldProps} = formik;
+  const { errors, touched, values, isSubmitting, handleSubmit, getFieldProps } = formik;
 
-    const handleShowPassword = () => {
-        setShowPassword((show) => !show);
-    };
-    const onChange = (event) => {
-        setMyInput(event.target.value);
-    };
-    const onChange1 = (event) => {
-        setMyInput1(event.target.value);
-    };
+  const handleShowPassword = () => {
+    setShowPassword((show) => !show);
+  };
 
-    return (
-        <FormikProvider value={formik}>
-            <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-                <Stack spacing={3} style={{marginBottom: 30}}>
-                    <TextField
-                        fullWidth
-                        autoComplete="username"
-                        type="email"
-                        label="Foydalanuvchi nomi"
-                        onChange={onChange}
-                        value={myInput}
-                    />
+  return (
+    <FormikProvider value={formik}>
+      <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
+        <Stack spacing={3}>
+          <TextField
+            fullWidth
+            autoComplete="username"
+            type="email"
+            label="Email address"
+            {...getFieldProps('email')}
+            error={Boolean(touched.email && errors.email)}
+            helperText={touched.email && errors.email}
+          />
 
-                    <TextField
-                        fullWidth
-                        autoComplete="current-password"
-                        type={showPassword ? 'text' : 'password'}
-                        label="Yashirin so&#8216;z"
-                        onChange={onChange1}
-                        value={myInput1}
-                        {...getFieldProps('password')}
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <IconButton onClick={handleShowPassword} edge="end">
-                                        <Icon icon={showPassword ? eyeFill : eyeOffFill}/>
-                                    </IconButton>
-                                </InputAdornment>
-                            )
-                        }}
-                        error={Boolean(touched.password && errors.password)}
-                        helperText={touched.password && errors.password}
-                    />
-                </Stack>
-                <Link
-                    to={
-                        myInput === 'tutor' ? '/tutor/app' :
-                        myInput === 'dekan' ? '/dean/app':
-                        myInput === 'ministry' ? '/ministry/app': '/login'
-                    }
+          <TextField
+            fullWidth
+            autoComplete="current-password"
+            type={showPassword ? 'text' : 'password'}
+            label="Password"
+            {...getFieldProps('password')}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton onClick={handleShowPassword} edge="end">
+                    <Icon icon={showPassword ? eyeFill : eyeOffFill} />
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
+            error={Boolean(touched.password && errors.password)}
+            helperText={touched.password && errors.password}
+          />
+        </Stack>
 
-                    style={{textDecoration: 'none'}}
-                >
-                    <LoadingButton
-                        fullWidth
-                        size="large"
-                        type="submit"
-                        variant="contained"
-                        loading={isSubmitting}
-                    >
-                        Kirish
-                    </LoadingButton>
-                </Link>
-            </Form>
-        </FormikProvider>
-    );
+        <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
+          <FormControlLabel
+            control={<Checkbox {...getFieldProps('remember')} checked={values.remember} />}
+            label="Remember me"
+          />
+
+          <Link component={RouterLink} variant="subtitle2" to="#">
+            Forgot password?
+          </Link>
+        </Stack>
+
+        <LoadingButton
+          fullWidth
+          size="large"
+          type="submit"
+          variant="contained"
+          loading={isSubmitting}
+        >
+          Login
+        </LoadingButton>
+      </Form>
+    </FormikProvider>
+  );
 }
