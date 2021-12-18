@@ -1,19 +1,16 @@
-import { Icon } from '@iconify/react';
-import androidFilled from '@iconify/icons-ant-design/android-filled';
+/* eslint-disable no-nested-ternary */
 // material
+import { Icon } from '@iconify/react';
+
 import { alpha, styled } from '@mui/material/styles';
-import { Card, Typography } from '@mui/material';
+import { Card, Typography, Grid } from '@mui/material';
 // utils
-import { fShortenNumber } from '../../../utils/formatNumber';
-
+import { OrganizationsData } from '../../../_mocks_/OrganizationsData';
 // ----------------------------------------------------------------------
-
 const RootStyle = styled(Card)(({ theme }) => ({
   boxShadow: 'none',
   textAlign: 'center',
-  padding: theme.spacing(5, 0),
-  color: theme.palette.primary.darker,
-  backgroundColor: theme.palette.primary.lighter
+  padding: theme.spacing(5, 0)
 }));
 
 const IconWrapperStyle = styled('div')(({ theme }) => ({
@@ -25,7 +22,6 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
   height: theme.spacing(8),
   justifyContent: 'center',
   marginBottom: theme.spacing(3),
-  color: theme.palette.primary.dark,
   backgroundImage: `linear-gradient(135deg, ${alpha(theme.palette.primary.dark, 0)} 0%, ${alpha(
     theme.palette.primary.dark,
     0.24
@@ -34,18 +30,34 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const TOTAL = 714000;
-
 export default function AppWeeklySales() {
   return (
-    <RootStyle>
-      <IconWrapperStyle>
-        <Icon icon={androidFilled} width={24} height={24} />
-      </IconWrapperStyle>
-      <Typography variant="h3">{fShortenNumber(TOTAL)}</Typography>
-      <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-        Weekly Sales
-      </Typography>
-    </RootStyle>
+    <div className="orgWrap">
+      <Grid container spacing={3}>
+        {OrganizationsData.map((item) => (
+          <Grid item xs={12} sm={6} md={3} key={item.id}>
+            <RootStyle
+              style={{
+                backgroundColor: `${item.num < 10 ? '#C8FACD' : 'rgb(255, 231, 217)'}`,
+                color: `${item.num < 10 ? 'rgb(4, 41, 122)' : 'rgb(122, 12, 46)'}`
+              }}
+            >
+              <IconWrapperStyle
+                style={{
+                  backgroundColor: `${item.num < 10 ? '#C8FACD' : 'rgb(255, 231, 217)'}`,
+                  color: `${item.num < 10 ? 'rgb(4, 41, 122)' : 'rgb(122, 12, 46)'}`
+                }}
+              >
+                <Icon icon="fa-solid:university" width={24} height={24} />
+              </IconWrapperStyle>
+              <Typography variant="h3">{item.num}</Typography>
+              <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
+                {item.title}
+              </Typography>
+            </RootStyle>
+          </Grid>
+        ))}
+      </Grid>
+    </div>
   );
 }
