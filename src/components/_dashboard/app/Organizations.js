@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 // material
 import { Icon } from '@iconify/react';
-
+import { Link } from 'react-router-dom';
 import { alpha, styled } from '@mui/material/styles';
 import { Card, Typography, Grid } from '@mui/material';
 // utils
@@ -36,25 +36,27 @@ export default function AppWeeklySales() {
       <Grid container spacing={3}>
         {OrganizationsData.map((item) => (
           <Grid item xs={12} sm={6} md={3} key={item.id}>
-            <RootStyle
-              style={{
-                backgroundColor: `${item.num < 10 ? '#C8FACD' : 'rgba(0,171,85,.8)'}`,
-                color: 'rgb(4, 41, 122)'
-              }}
-            >
-              <IconWrapperStyle
+            <Link to="/dashboard/companies" style={{ textDecoration: 'none' }}>
+              <RootStyle
                 style={{
-                  backgroundColor: '#C8FACD',
+                  backgroundColor: `${item.num < 10 ? '#C8FACD' : 'rgba(0,171,85,.8)'}`,
                   color: 'rgb(4, 41, 122)'
                 }}
               >
-                <Icon icon="fa-solid:university" width={24} height={24} />
-              </IconWrapperStyle>
-              <Typography variant="h3">{item.num}</Typography>
-              <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
-                {item.title}
-              </Typography>
-            </RootStyle>
+                <IconWrapperStyle
+                  style={{
+                    backgroundColor: '#C8FACD',
+                    color: 'rgb(4, 41, 122)'
+                  }}
+                >
+                  <Icon icon="fa-solid:university" width={24} height={24} />
+                </IconWrapperStyle>
+                <Typography variant="h3">{item.num}</Typography>
+                <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
+                  {item.title}
+                </Typography>
+              </RootStyle>
+            </Link>
           </Grid>
         ))}
       </Grid>

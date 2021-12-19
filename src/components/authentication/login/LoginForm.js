@@ -79,7 +79,7 @@ export default function LoginForm() {
             helperText={touched.password && errors.password}
           />
         </Stack>
-        <Link to="/dashboard/app" style={{ textDecoration: 'none' }}>
+        <Link to="/dashboard/tasks" style={{ textDecoration: 'none' }}>
           <LoadingButton
             fullWidth
             size="large"

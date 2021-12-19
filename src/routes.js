@@ -6,10 +6,11 @@ import LogoOnlyLayout from './layouts/LogoOnlyLayout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import DashboardApp from './pages/DashboardApp';
-import Products from './pages/Products';
-import Blog from './pages/Blog';
 import NotFound from './pages/Page404';
 import Contracts from './pages/Contracts';
+import Companies from './pages/Companies';
+import DailyTasks from './pages/Tasks';
+import Daily from './pages/Daily';
 
 // ----------------------------------------------------------------------
 
@@ -22,8 +23,9 @@ export default function Router() {
         { element: <Navigate to="/dashboard/app" replace /> },
         { path: 'app', element: <DashboardApp /> },
         { path: 'contracts', element: <Contracts /> },
-        { path: 'products', element: <Products /> },
-        { path: 'blog', element: <Blog /> }
+        { path: 'companies', element: <Companies /> },
+        { path: 'tasks', element: <DailyTasks /> },
+        { path: 'daily', element: <Daily /> }
       ]
     },
     {
