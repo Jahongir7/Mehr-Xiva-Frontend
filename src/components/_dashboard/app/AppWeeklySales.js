@@ -38,14 +38,14 @@ export default function AppWeeklySales() {
           <Grid item xs={12} sm={6} md={3} key={item.id}>
             <RootStyle
               style={{
-                backgroundColor: `${item.num < 10 ? '#C8FACD' : 'rgb(255, 231, 217)'}`,
-                color: `${item.num < 10 ? 'rgb(4, 41, 122)' : 'rgb(122, 12, 46)'}`
+                backgroundColor: `${item.num < 10 ? '#C8FACD' : 'rgba(0,171,85,.8)'}`,
+                color: 'rgb(4, 41, 122)'
               }}
             >
               <IconWrapperStyle
                 style={{
-                  backgroundColor: `${item.num < 10 ? '#C8FACD' : 'rgb(255, 231, 217)'}`,
-                  color: `${item.num < 10 ? 'rgb(4, 41, 122)' : 'rgb(122, 12, 46)'}`
+                  backgroundColor: '#C8FACD',
+                  color: 'rgb(4, 41, 122)'
                 }}
               >
                 <Icon icon="fa-solid:university" width={24} height={24} />
