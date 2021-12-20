@@ -36,7 +36,7 @@ const Daily = () => {
         <div className={classes.data}>
           {DailyData && DailyData.length
             ? DailyData.map((item) => (
-                <div className={classes.item} key={item._id}>
+                <div className={classes.item} key={item.id}>
                   <div className={classes.karta}>{item.text}</div>
                   <div className={classes.founderPayment}>{item.date}</div>
                   <div className={classes.founderPayment}>{item.file}</div>

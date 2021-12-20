@@ -170,3 +170,11 @@
   align-items: center;
   justify-content: center;
 }
+@media (min-width: 1260px) {
+  .item{
+    width: 100%;
+  }
+  .item_head{
+    width: 100%;
+  }
+}

@@ -15,7 +15,7 @@ const sidebarConfig = [
   },
   {
     title: 'Tashkilotlar',
-    path: '/dashboard/contracts',
+    path: '/dashboard/companies',
     icon: getIcon(pieChart2Fill)
   },
   {

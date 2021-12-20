@@ -13,7 +13,7 @@ import Contracts from "./Contracts";
 
 export default function DashboardApp() {
   return (
-    <Page title="Tashkilotlar">
+    <Page title="Shartnomalar">
       <Container maxWidth="xl">
         <AppWeeklySales />
         <Contracts/>

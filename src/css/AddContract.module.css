@@ -4,3 +4,7 @@
     align-items: center;
     justify-content: center;
 }
+.contract_input{
+    margin: 20px !important;
+    width:80%
+}

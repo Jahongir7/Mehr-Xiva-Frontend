@@ -1,7 +1,9 @@
 import swal from 'sweetalert';
 import {Link} from "react-router-dom"
 import Select from 'react-select';
+import { LoadingButton } from '@mui/lab';
 import { ContractsList } from '../_mocks_/Contracts';
+
 
 import classes from '../css/Contract.module.css';
 
@@ -31,7 +33,14 @@ const Contracts = () => {
           >
             <h2>Shartnomalar</h2>
             <Link to="/dashboard/add-contract" style={{textDecoration:"none"}}>
-            <h2>Shartnoma qo'shish</h2></Link>
+              <LoadingButton
+                  size="large"
+                  type="button"
+                  variant="contained"
+
+              >
+                Qo'shish <i className="fas fa-plus" style={{paddingLeft:"10px"}}/>
+              </LoadingButton></Link>
             {'  '}
           </div>
           <div className={classes.itemWrap}>

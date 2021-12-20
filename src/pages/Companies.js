@@ -1,5 +1,8 @@
+import {LoadingButton} from "@mui/lab";
+import {Link} from "react-router-dom";
 import { CompaniesData } from '../_mocks_/Companies';
 import classes from '../css/Companies.module.css';
+
 
 const Companies = () => (
   <>
@@ -12,7 +15,16 @@ const Companies = () => (
             justifyContent: 'space-between'
           }}
         >
-          <h2>Kompaniyalar</h2>
+          <h2>Tashkilotlar</h2>
+            <Link to="/dashboard/add-companies" style={{textDecoration:"none"}}>
+                <LoadingButton
+                    size="large"
+                    type="button"
+                    variant="contained"
+
+                >
+                    Qo'shish <i className="fas fa-plus" style={{paddingLeft:"10px"}}/>
+                </LoadingButton></Link>
           {'  '}
         </div>
         <div className={classes.itemWrap}>

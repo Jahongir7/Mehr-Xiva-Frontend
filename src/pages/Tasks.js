@@ -11,7 +11,7 @@ const DailyTasks = () => {
   }
   return (
     <div>
-      <AppTasks />
+
       <div className={classes.FounderMain}>
         <div className={classes.founderMainWrap}>
           <div
@@ -30,7 +30,7 @@ const DailyTasks = () => {
                 <div className={classes.name}>
                   <h3>Shartnoma</h3>
                 </div>
-                <div className={classes.karta}>Tayinlangan vaqti</div>
+                <div className={classes.karta}>Shartnoma turi</div>
                 <div className={classes.founderPayment}>Ohirgi muddat</div>
               </div>
             ) : (
@@ -55,6 +55,9 @@ const DailyTasks = () => {
           </div>
         </div>
       </div>
+        <div style={{width:"30%"}}>
+        <AppTasks />
+        </div>
     </div>
   );
 };

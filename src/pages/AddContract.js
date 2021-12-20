@@ -50,59 +50,59 @@ export default function AddContract() {
     // }
     return (
         <div className={classes.contract_form}>
+            <h1>Shartnoma qo'shish</h1>
         <FormikProvider value={formik}>
             <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-                <Stack spacing={3} style={{ marginBottom: 30 }} className={classes.flexx}>
+                <Stack  style={{ marginBottom: 30 }} className={classes.flexx}>
                     <TextField
                         fullWidth
                         autoComplete="username"
                         type="email"
-                        label=""
+                        label="Kompaniya nomi"
                         onChange={onChange}
                         value={myInput}
+                        className={classes.contract_input}
                     />
                     <TextField
                         fullWidth
                         autoComplete="username"
                         type="email"
-                        label="Foydalanuvchi nomi"
+                        label="Masul shaxs"
                         onChange={onChange}
-                        value={myInput}
+                        value={myInput} className={classes.contract_input}
                     /><TextField
                     fullWidth
                     autoComplete="username"
                     type="email"
-                    label="Foydalanuvchi nomi"
+                    label="Kompaniya raqami"
                     onChange={onChange}
-                    value={myInput}
+                    value={myInput} className={classes.contract_input}
                 /><TextField
                     fullWidth
                     autoComplete="username"
                     type="email"
-                    label="Foydalanuvchi nomi"
+                    label="To'lov miqdori"
                     onChange={onChange}
-                    value={myInput}
+                    value={myInput} className={classes.contract_input}
                 />
                     <TextField
                         fullWidth
                         autoComplete="username"
                         type="email"
-                        label="Foydalanuvchi nomi"
+                        label="Masul shaxs raqami"
                         onChange={onChange}
-                        value={myInput}
+                        value={myInput} className={classes.contract_input}
                     />
                 </Stack>
-                <Link to="/dashboard/tasks" style={{ textDecoration: 'none' }}>
                     <LoadingButton
-                        fullWidth
                         size="large"
                         type="button"
                         variant="contained"
+                        style={{marginLeft:"20px"}}
                         // onClick={() => myFunc()}
                     >
-                        Kirish
+                        Qo'shish
                     </LoadingButton>
-                </Link>
             </Form>
         </FormikProvider></div>
     );
