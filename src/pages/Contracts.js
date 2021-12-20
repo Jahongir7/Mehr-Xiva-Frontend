@@ -1,6 +1,8 @@
 import swal from 'sweetalert';
+import {Link} from "react-router-dom"
 import Select from 'react-select';
 import { ContractsList } from '../_mocks_/Contracts';
+
 import classes from '../css/Contract.module.css';
 
 const Contracts = () => {
@@ -23,10 +25,13 @@ const Contracts = () => {
             style={{
               display: 'flex',
               flexWrap: 'wrap',
-              justifyContent: 'space-between'
+              justifyContent: 'space-between',
+              paddingTop:"50px"
             }}
           >
             <h2>Shartnomalar</h2>
+            <Link to="/dashboard/add-contract" style={{textDecoration:"none"}}>
+            <h2>Shartnoma qo'shish</h2></Link>
             {'  '}
           </div>
           <div className={classes.itemWrap}>

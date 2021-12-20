@@ -11,6 +11,7 @@ import Contracts from './pages/Contracts';
 import Companies from './pages/Companies';
 import DailyTasks from './pages/Tasks';
 import Daily from './pages/Daily';
+import AddContract from "./pages/AddContract";
 
 // ----------------------------------------------------------------------
 
@@ -24,7 +25,8 @@ export default function Router() {
         { path: 'contracts', element: <Contracts /> },
         { path: 'companies', element: <Companies /> },
         { path: 'tasks', element: <DailyTasks /> },
-        { path: 'daily', element: <Daily /> }
+        { path: 'daily', element: <Daily /> },
+        { path: 'add-contract', element: <AddContract /> }
       ]
     },
     {

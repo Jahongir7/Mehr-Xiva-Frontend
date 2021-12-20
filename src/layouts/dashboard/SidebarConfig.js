@@ -15,12 +15,13 @@ const sidebarConfig = [
   },
   {
     title: 'Tashkilotlar',
-    path: '/dashboard/app',
+    path: '/dashboard/contracts',
     icon: getIcon(pieChart2Fill)
   },
   {
     title: 'Shartnomalar',
-    path: '/dashboard/contracts',
+
+    path: '/dashboard/app',
     icon: getIcon(fileTextFill)
   },
   {

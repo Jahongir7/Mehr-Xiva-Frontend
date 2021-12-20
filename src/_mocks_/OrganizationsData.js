@@ -19,14 +19,5 @@ export const OrganizationsData = [
     title: 'Mudofa',
     num: 1
   },
-  {
-    id: 15,
-    title: 'Soliq',
-    num: 2
-  },
-  {
-    id: 16,
-    title: 'Sud',
-    num: 15
-  }
+
 ];
