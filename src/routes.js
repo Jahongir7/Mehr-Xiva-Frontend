@@ -1,11 +1,5 @@
-import { useNavigate, Routes, Route } from 'react-router-dom';
-// layouts
-import DashboardLayout from './layouts/dashboard';
-import LogoOnlyLayout from './layouts/LogoOnlyLayout';
-//
-import Login from './pages/Login';
+import { Routes, Route } from 'react-router-dom';
 import AddStory from './pages/AddStory';
-import NotFound from './pages/Page404';
 import Company from './pages/Company';
 import Companies from './pages/Companies';
 import AddCompany from './pages/AddCompany';
