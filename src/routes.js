@@ -1,4 +1,4 @@
-import { Navigate, useRoutes } from 'react-router-dom';
+import { useNavigate, Routes, Route } from 'react-router-dom';
 // layouts
 import DashboardLayout from './layouts/dashboard';
 import LogoOnlyLayout from './layouts/LogoOnlyLayout';
@@ -11,30 +11,11 @@ import Companies from './pages/Companies';
 import AddCompany from './pages/AddCompany';
 
 // ----------------------------------------------------------------------
-
-export default function Router() {
-  return useRoutes([
-    {
-      path: '/dashboard',
-      element: <DashboardLayout />,
-      children: [
-        { path: 'add-story', element: <AddStory /> },
-        { path: 'company/:id', element: <Company /> },
-        { path: 'companies', element: <Companies /> },
-        { path: 'add-company', element: <AddCompany /> }
-      ]
-    },
-    {
-      path: '/',
-      element: <LogoOnlyLayout />,
-      children: [
-        { element: <Navigate to="/login" replace /> },
-        { path: 'login', element: <Login /> },
-        { path: '404', element: <NotFound /> },
-        { path: '/', element: <Navigate to="/dashboard" /> },
-        { path: '*', element: <Navigate to="/404" /> }
-      ]
-    },
-    { path: '*', element: <Navigate to="/404" replace /> }
-  ]);
-}
+export const AdminRoutes = () => (
+  <Routes>
+    <Route path="/companies" element={<Companies />} />
+    <Route path="/add-company" element={<AddCompany />} />
+    <Route path="/add-story" element={<AddStory />} />
+    <Route path="/company/:id" element={<Company />} />
+  </Routes>
+);

@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import { alpha } from '@mui/material/styles';
 import { Button, Box, Divider, Typography, Avatar, IconButton } from '@mui/material';
 // components
+import { useDispatch } from 'react-redux';
 import MenuPopover from '../../components/MenuPopover';
 //
 import account from '../../_mocks_/account';
+import { logout } from '../../redux/actions/authActions';
 
 // ----------------------------------------------------------------------
 
@@ -15,12 +17,15 @@ import account from '../../_mocks_/account';
 export default function AccountPopover() {
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
-
+  const dispatch = useDispatch();
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
+  };
+  const handleClick = () => {
+    dispatch(logout());
   };
 
   return (
@@ -63,8 +68,8 @@ export default function AccountPopover() {
         <Divider sx={{ my: 1 }} />
 
         <Box sx={{ p: 2, pt: 1.5 }}>
-          <Link to="/login">
-            <Button fullWidth color="inherit" variant="outlined">
+          <Link to="/">
+            <Button fullWidth color="inherit" variant="outlined" onClick={handleClick}>
               Chiqish
             </Button>
           </Link>
