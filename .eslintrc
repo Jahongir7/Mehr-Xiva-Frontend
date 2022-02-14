@@ -8,7 +8,10 @@
     "airbnb",
     "prettier",
     "plugin:jsx-a11y/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "plugins": [
     "prettier",
@@ -22,6 +25,13 @@
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "impliedStrict": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
   },
   "rules": {

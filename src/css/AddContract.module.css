@@ -1,10 +1,28 @@
-.flexx{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
+.flexx {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  align-items: center;
+  justify-content: center;
 }
-.contract_input{
-    margin: 20px !important;
-    width:80%
+.contract_input {
+  margin: 20px !important;
+  width: 80%;
+}
+
+@media (max-width: 880px) {
+  .flexx {
+    grid-template-columns: 1fr !important;
+  }
+  .contract_input {
+    width: 90%;
+  }
+  .loginMhide {
+    display: none;
+  }
+}
+.errors {
+  padding: 0;
+  margin: 0;
+  color: red !important;
+  margin: 0 20px;
 }

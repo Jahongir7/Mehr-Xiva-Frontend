@@ -1,9 +1,8 @@
 // ----------------------------------------------------------------------
 
 const account = {
-  displayName: 'Jahongir Khujamuratov',
-  email: 'Jahongir@gmail.com',
-  photoURL: '/static/mock-images/avatars/avatar_default.jpg'
+  displayName: 'Asadbek Baxtiyarov',
+  photoURL: '/static/mock-images/avatars/b.png'
 };
 
 export default account;

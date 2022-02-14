@@ -1,73 +1,107 @@
-import {LoadingButton} from "@mui/lab";
-import {Link} from "react-router-dom";
-import { CompaniesData } from '../_mocks_/Companies';
-import classes from '../css/Companies.module.css';
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-nested-ternary */
+// material
+import { useEffect } from "react";
+import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
+import { LoadingButton } from "@mui/lab";
+import { useDispatch, useSelector } from "react-redux";
+import { alpha, styled } from "@mui/material/styles";
+import { Card, Typography, Grid } from "@mui/material";
+// utils
+import swal from "sweetalert";
+import { deleteCompany, getCompany } from "../redux/actions/adminActions";
+// ----------------------------------------------------------------------
+const RootStyle = styled(Card)(({ theme }) => ({
+  boxShadow: "none",
+  textAlign: "center",
+  padding: theme.spacing(3, 0),
+  backgroundColor: theme.palette.primary.light,
+}));
 
+const IconWrapperStyle = styled("div")(({ theme }) => ({
+  margin: "auto",
+  display: "flex",
+  borderRadius: "50%",
+  alignItems: "center",
+  width: theme.spacing(8),
+  height: theme.spacing(8),
+  justifyContent: "center",
+  marginBottom: theme.spacing(3),
+  backgroundImage: `linear-gradient(135deg, ${alpha(
+    theme.palette.primary.main,
+    0
+  )} 0%, ${alpha(theme.palette.primary.dark, 0.24)} 100%)`,
+}));
+// ----------------------------------------------------------------------
 
-const Companies = () => (
-  <>
-    <div className={classes.FounderMain}>
-      <div className={classes.founderMainWrap}>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between'
-          }}
-        >
-          <h2>Tashkilotlar</h2>
-            <Link to="/dashboard/add-companies" style={{textDecoration:"none"}}>
-                <LoadingButton
-                    size="large"
-                    type="button"
-                    variant="contained"
+export default function AppWeeklySales() {
+  const dispatch = useDispatch();
+  const companies = useSelector((state) => state.adminReducer.companies);
+  let cCompanies = [];
 
+  if (companies && companies.length > 0) {
+    cCompanies = [...companies];
+  }
+  function myFunction1(id) {
+    swal("Haqiqatdan ham ushbu tashkilotni o'chirasizmi ?", {
+      buttons: ["Yo'q", "Ha"],
+    }).then((value) => {
+      if (value) {
+        dispatch(deleteCompany(id));
+      }
+    });
+  }
+  useEffect(() => {
+    dispatch(getCompany());
+  }, [dispatch]);
+  return (
+    <div style={{ marginBottom: 90 }}>
+      <Link
+        to="/dashboard/add-company"
+        style={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          textDecoration: "none",
+          marginBottom: 20,
+        }}
+      >
+        <LoadingButton size="large" type="button" variant="contained">
+          Qo'shish
+        </LoadingButton>
+      </Link>
+      <Grid container spacing={3}>
+        {cCompanies.map((item) => (
+          <Grid item xs={12} sm={6} md={3} key={item._id}>
+            <RootStyle style={{ color: "#fff" }}>
+              <Link
+                to={`/dashboard/company/${item._id}`}
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <IconWrapperStyle
+                  style={{
+                    backgroundColor: "#C8FACD",
+                    color: "rgb(4, 41, 122)",
+                  }}
                 >
-                    Qo'shish <i className="fas fa-plus" style={{paddingLeft:"10px"}}/>
-                </LoadingButton></Link>
-          {'  '}
-        </div>
-        <div className={classes.itemWrap}>
-          {CompaniesData && CompaniesData.length ? (
-            <div className={classes.item_head}>
-              <div className={classes.name}>
-                <h3>Kompaniya</h3>
-              </div>
-              <div className={classes.karta}>Tumani</div>
-              <div className={classes.founderPayment}>Direktor</div>
-              <div className={classes.founderDate}>Direktor raqami</div>
-              <div className={classes.founderDate}>Buxgalter</div>
-              <div className={classes.founderDate}>Buxgalter raqami</div>
-              <div className={classes.founderDate}>INN</div>
-              <div className={classes.founderDate}>Veb sayti</div>
-              <div className={classes.founderDate}>E-pochtasi</div>
-            </div>
-          ) : (
-            ''
-          )}
-          <div className={classes.data}>
-            {CompaniesData && CompaniesData.length
-              ? CompaniesData.map((item) => (
-                  <div className={classes.item} key={item._id}>
-                    <div className={classes.name}>
-                      <h3>{item.name}</h3>
-                    </div>
-                    <div className={classes.karta}>{item.district}</div>
-                    <div className={classes.founderPayment}>{item.director}</div>
-                    <div className={classes.founderDate}>{item.director_phone}</div>
-                    <div className={classes.founderDate}>{item.accountant}</div>
-                    <div className={classes.founderDate}>{item.accountant_phone}</div>
-                    <div className={classes.founderDate}>{item.website}</div>
-                    <div className={classes.founderDate}>{item.inn}</div>
-                    <div className={classes.founderDate}>{item.email}</div>
-                  </div>
-                ))
-              : "Hozircha Kompaniyalar yo'q!"}
-          </div>
-        </div>
-      </div>
+                  <Icon icon="fa-solid:university" width={24} height={24} />
+                </IconWrapperStyle>
+                <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
+                  {item.name}
+                </Typography>
+              </Link>
+              <LoadingButton
+                onClick={() => myFunction1(item._id)}
+                style={{ marginTop: "20px", color: "white" }}
+              >
+                <Icon icon="bi:trash" width={24} height={24} />
+              </LoadingButton>
+            </RootStyle>
+          </Grid>
+        ))}
+      </Grid>
     </div>
-  </>
-);
-
-export default Companies;
+  );
+}
