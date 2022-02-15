@@ -1,37 +1,37 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-nested-ternary */
 // material
-import { useEffect } from "react";
-import { Icon } from "@iconify/react";
-import { Link } from "react-router-dom";
-import { LoadingButton } from "@mui/lab";
-import { useDispatch, useSelector } from "react-redux";
-import { alpha, styled } from "@mui/material/styles";
-import { Card, Typography, Grid } from "@mui/material";
+import { useEffect } from 'react';
+import { Icon } from '@iconify/react';
+import { Link } from 'react-router-dom';
+import { LoadingButton } from '@mui/lab';
+import { useDispatch, useSelector } from 'react-redux';
+import { alpha, styled } from '@mui/material/styles';
+import { Card, Typography, Grid } from '@mui/material';
 // utils
-import swal from "sweetalert";
-import { deleteCompany, getCompany } from "../redux/actions/adminActions";
+import swal from 'sweetalert';
+import { deleteCompany, getCompany } from '../redux/actions/adminActions';
 // ----------------------------------------------------------------------
 const RootStyle = styled(Card)(({ theme }) => ({
-  boxShadow: "none",
-  textAlign: "center",
+  boxShadow: 'none',
+  textAlign: 'center',
   padding: theme.spacing(3, 0),
-  backgroundColor: theme.palette.primary.light,
+  backgroundColor: theme.palette.primary.light
 }));
 
-const IconWrapperStyle = styled("div")(({ theme }) => ({
-  margin: "auto",
-  display: "flex",
-  borderRadius: "50%",
-  alignItems: "center",
+const IconWrapperStyle = styled('div')(({ theme }) => ({
+  margin: 'auto',
+  display: 'flex',
+  borderRadius: '50%',
+  alignItems: 'center',
   width: theme.spacing(8),
   height: theme.spacing(8),
-  justifyContent: "center",
+  justifyContent: 'center',
   marginBottom: theme.spacing(3),
-  backgroundImage: `linear-gradient(135deg, ${alpha(
-    theme.palette.primary.main,
-    0
-  )} 0%, ${alpha(theme.palette.primary.dark, 0.24)} 100%)`,
+  backgroundImage: `linear-gradient(135deg, ${alpha(theme.palette.primary.main, 0)} 0%, ${alpha(
+    theme.palette.primary.dark,
+    0.24
+  )} 100%)`
 }));
 // ----------------------------------------------------------------------
 
@@ -44,8 +44,8 @@ export default function AppWeeklySales() {
     cCompanies = [...companies];
   }
   function myFunction1(id) {
-    swal("Haqiqatdan ham ushbu tashkilotni o'chirasizmi ?", {
-      buttons: ["Yo'q", "Ha"],
+    swal("Haqiqatdan ham ushbu tashkilotni o'chirasizmi?", {
+      buttons: ["Yo'q", 'Ha']
     }).then((value) => {
       if (value) {
         dispatch(deleteCompany(id));
@@ -60,12 +60,12 @@ export default function AppWeeklySales() {
       <Link
         to="/dashboard/add-company"
         style={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          textDecoration: "none",
-          marginBottom: 20,
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          textDecoration: 'none',
+          marginBottom: 20
         }}
       >
         <LoadingButton size="large" type="button" variant="contained">
@@ -75,26 +75,26 @@ export default function AppWeeklySales() {
       <Grid container spacing={3}>
         {cCompanies.map((item) => (
           <Grid item xs={12} sm={6} md={3} key={item._id}>
-            <RootStyle style={{ color: "#fff" }}>
+            <RootStyle style={{ color: '#fff' }}>
               <Link
                 to={`/dashboard/company/${item._id}`}
-                style={{ textDecoration: "none", color: "white" }}
+                style={{ textDecoration: 'none', color: 'white' }}
               >
                 <IconWrapperStyle
                   style={{
-                    backgroundColor: "#C8FACD",
-                    color: "rgb(4, 41, 122)",
+                    backgroundColor: '#C8FACD',
+                    color: 'rgb(4, 41, 122)'
                   }}
                 >
                   <Icon icon="fa-solid:university" width={24} height={24} />
                 </IconWrapperStyle>
-                <Typography variant="subtitle2" sx={{ opacity: 0.72 }}>
+                <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
                   {item.name}
                 </Typography>
               </Link>
               <LoadingButton
                 onClick={() => myFunction1(item._id)}
-                style={{ marginTop: "20px", color: "white" }}
+                style={{ marginTop: '20px', color: 'white' }}
               >
                 <Icon icon="bi:trash" width={24} height={24} />
               </LoadingButton>
