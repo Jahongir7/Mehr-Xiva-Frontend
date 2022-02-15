@@ -3,19 +3,19 @@ import { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 // material
 import { styled } from '@mui/material/styles';
+import { useSelector } from 'react-redux';
 import { Box, Link, Drawer, Typography, Avatar } from '@mui/material';
 // components
 import Scrollbar from '../../components/Scrollbar';
 import NavSection from '../../components/NavSection';
 import { MHidden } from '../../components/@material-extend';
 //
-import sidebarConfig from './SidebarConfig';
+import sidebarConfig, { directorSidebar } from './SidebarConfig';
 import account from '../../_mocks_/account';
 
 // ----------------------------------------------------------------------
 
 const DRAWER_WIDTH = 280;
-
 const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
     flexShrink: 0,
@@ -41,7 +41,7 @@ DashboardSidebar.propTypes = {
 
 export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
   const { pathname } = useLocation();
-
+  const role = useSelector((state) => state.authReducer.role);
   useEffect(() => {
     if (isOpenSidebar) {
       onCloseSidebar();
@@ -72,7 +72,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
         </Link>
       </Box>
 
-      <NavSection navConfig={sidebarConfig} />
+      <NavSection navConfig={role ? sidebarConfig : directorSidebar} />
 
       <Box sx={{ flexGrow: 1 }} />
     </Scrollbar>

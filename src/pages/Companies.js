@@ -36,6 +36,7 @@ const IconWrapperStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function AppWeeklySales() {
+  const role = useSelector((state) => state.authReducer.role);
   const dispatch = useDispatch();
   const companies = useSelector((state) => state.adminReducer.companies);
   let cCompanies = [];
@@ -57,27 +58,31 @@ export default function AppWeeklySales() {
   }, [dispatch]);
   return (
     <div style={{ marginBottom: 90 }}>
-      <Link
-        to="/dashboard/add-company"
-        style={{
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          textDecoration: 'none',
-          marginBottom: 20
-        }}
-      >
-        <LoadingButton size="large" type="button" variant="contained">
-          Qo'shish
-        </LoadingButton>
-      </Link>
+      {role ? (
+        <Link
+          to="/dashboard/add-company"
+          style={{
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            textDecoration: 'none',
+            marginBottom: 20
+          }}
+        >
+          <LoadingButton size="large" type="button" variant="contained">
+            Qo'shish
+          </LoadingButton>
+        </Link>
+      ) : (
+        ''
+      )}
       <Grid container spacing={3}>
         {cCompanies.map((item) => (
           <Grid item xs={12} sm={6} md={3} key={item._id}>
             <RootStyle style={{ color: '#fff' }}>
               <Link
-                to={`/dashboard/company/${item._id}`}
+                to={role ? `/dashboard/company/${item._id}` : `/director/company/${item._id}`}
                 style={{ textDecoration: 'none', color: 'white' }}
               >
                 <IconWrapperStyle
@@ -92,12 +97,16 @@ export default function AppWeeklySales() {
                   {item.name}
                 </Typography>
               </Link>
-              <LoadingButton
-                onClick={() => myFunction1(item._id)}
-                style={{ marginTop: '20px', color: 'white' }}
-              >
-                <Icon icon="bi:trash" width={24} height={24} />
-              </LoadingButton>
+              {role ? (
+                <LoadingButton
+                  onClick={() => myFunction1(item._id)}
+                  style={{ marginTop: '20px', color: 'white' }}
+                >
+                  <Icon icon="bi:trash" width={24} height={24} />
+                </LoadingButton>
+              ) : (
+                ''
+              )}
             </RootStyle>
           </Grid>
         ))}

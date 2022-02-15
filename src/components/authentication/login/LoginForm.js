@@ -32,7 +32,7 @@ export default function LoginForm() {
           navigate('/dashboard/companies', { replace: true });
           break;
         case false:
-          navigate('/director/companies', { replace: true });
+          navigate('/director/statistics', { replace: true });
           break;
         default:
           break;

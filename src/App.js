@@ -8,7 +8,7 @@ import store from './redux/store';
 import Login from './pages/Login';
 import PrivateRoute from './utility/PrivateRoute';
 import DashboardLayout from './layouts/dashboard';
-import { AdminRoutes } from './routes';
+import { AdminRoutes, DirectorRoutes } from './routes';
 import './App.css';
 
 export default function App() {
@@ -29,6 +29,14 @@ export default function App() {
               element={
                 <PrivateRoute>
                   <AdminRoutes />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/director/*"
+              element={
+                <PrivateRoute>
+                  <DirectorRoutes />
                 </PrivateRoute>
               }
             />

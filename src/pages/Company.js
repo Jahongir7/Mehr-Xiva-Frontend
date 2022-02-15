@@ -12,6 +12,7 @@ import { getCompanyById, getCompanyStories, deleteStory } from '../redux/actions
 import classes from '../css/Group1.module.css';
 
 export default function CompanyStory() {
+  const role = useSelector((state) => state.authReducer.role);
   function myFunction1(id) {
     swal("Haqiqatdan ham ushbu tashkilotni o'chirasizmi ?", {
       buttons: ["Yo'q", 'Ha']
@@ -94,9 +95,15 @@ export default function CompanyStory() {
                     />
                   </div>
                   <div className={classes.founderDate}>
-                    <LoadingButton onClick={() => myFunction1(item._id)}>
-                      <Icon icon="bi:trash" width={24} height={24} />
-                    </LoadingButton>
+                    {role ? (
+                      <LoadingButton onClick={() => myFunction1(item._id)}>
+                        <Icon icon="bi:trash" width={24} height={24} />
+                      </LoadingButton>
+                    ) : (
+                      <LoadingButton style={{ cursor: 'not-allowed' }}>
+                        <Icon icon="bi:trash" width={24} height={24} />
+                      </LoadingButton>
+                    )}
                   </div>
                 </div>
               ))
