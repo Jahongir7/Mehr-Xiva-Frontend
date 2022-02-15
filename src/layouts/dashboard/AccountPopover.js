@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { alpha } from '@mui/material/styles';
 import { Button, Box, Divider, Typography, Avatar, IconButton } from '@mui/material';
 // components
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import MenuPopover from '../../components/MenuPopover';
 //
-import account from '../../_mocks_/account';
+import account, { account2 } from '../../_mocks_/account';
 import { logout } from '../../redux/actions/authActions';
 
 // ----------------------------------------------------------------------
@@ -15,6 +15,7 @@ import { logout } from '../../redux/actions/authActions';
 // ----------------------------------------------------------------------
 
 export default function AccountPopover() {
+  const role = useSelector((state) => state.authReducer.role);
   const anchorRef = useRef(null);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ export default function AccountPopover() {
   const handleClick = () => {
     dispatch(logout());
   };
-
+  const profile = role ? account : account2;
   return (
     <>
       <IconButton
@@ -50,7 +51,7 @@ export default function AccountPopover() {
           })
         }}
       >
-        <Avatar src={account.photoURL} alt="photoURL" />
+        <Avatar src={profile.photoURL} alt="photoURL" />
       </IconButton>
 
       <MenuPopover
@@ -61,7 +62,7 @@ export default function AccountPopover() {
       >
         <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle1" noWrap>
-            {account.displayName}
+            {profile.displayName}
           </Typography>
         </Box>
 

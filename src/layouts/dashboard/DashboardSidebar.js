@@ -11,7 +11,7 @@ import NavSection from '../../components/NavSection';
 import { MHidden } from '../../components/@material-extend';
 //
 import sidebarConfig, { directorSidebar } from './SidebarConfig';
-import account from '../../_mocks_/account';
+import account, { account2 } from '../../_mocks_/account';
 
 // ----------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
-
+  const profile = role ? account : account2;
   const renderContent = (
     <Scrollbar
       sx={{
@@ -59,13 +59,13 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
       <Box sx={{ mb: 5, mx: 2.5 }}>
         <Link underline="none" component={RouterLink} to="#">
           <AccountStyle>
-            <Avatar src={account.photoURL} alt="photoURL" />
+            <Avatar src={profile.photoURL} alt="photoURL" />
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                {account.displayName}
+                {profile.displayName}
               </Typography>
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                {account.role}
+                {profile.role}
               </Typography>
             </Box>
           </AccountStyle>
