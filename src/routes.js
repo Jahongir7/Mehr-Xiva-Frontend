@@ -4,6 +4,8 @@ import Company from './pages/Company';
 import Companies from './pages/Companies';
 import AddCompany from './pages/AddCompany';
 import Statistics from './pages/Statistics';
+import UpdateStory from './pages/UpdateStory';
+import CompanyIndex from './pages/CompanyIndex';
 
 // ----------------------------------------------------------------------
 export const AdminRoutes = () => (
@@ -11,7 +13,8 @@ export const AdminRoutes = () => (
     <Route path="/companies" element={<Companies />} />
     <Route path="/add-company" element={<AddCompany />} />
     <Route path="/add-story" element={<AddStory />} />
-    <Route path="/company/:id" element={<Company />} />
+    <Route path="/company/:id" element={<CompanyIndex />} />
+    <Route path="/update-story/:id" element={<UpdateStory />} />
   </Routes>
 );
 

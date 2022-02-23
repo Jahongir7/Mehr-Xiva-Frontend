@@ -7,7 +7,8 @@ import {
   ADMIN_DELETE_COMPANY,
   ADMIN_ADD_STORY,
   ADMIN_GET_COMPANY_BY_ID,
-  ADMIN_DELETE_STORY
+  ADMIN_DELETE_STORY,
+  ADMIN_UPDATE_NOTE
 } from '../types';
 
 export const getCompanyStories = (id) => async (dispatch) => {
@@ -101,6 +102,23 @@ export const deleteStory = (id) => async (dispatch) => {
 
     dispatch({
       type: ADMIN_DELETE_STORY,
+      payload: res
+    });
+  } catch (err) {
+    dispatch({
+      type: ADMIN_ERROR
+    });
+  }
+};
+
+export const updateStory = (formData, id) => async (dispatch) => {
+  try {
+    delete formData._id;
+    console.log(formData);
+    const res = await api.put(`/admin/notes/${id}`, formData);
+
+    dispatch({
+      type: ADMIN_UPDATE_NOTE,
       payload: res
     });
   } catch (err) {

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-boolean-value */
 /* eslint-disable prefer-const */
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,10 +12,10 @@ import { LoadingButton } from '@mui/lab';
 import { getCompanyById, getCompanyStories, deleteStory } from '../redux/actions/adminActions';
 import classes from '../css/Group1.module.css';
 
-export default function CompanyStory() {
+export default function CompanyStory({ handleEdit }) {
   const role = useSelector((state) => state.authReducer.role);
   function myFunction1(id) {
-    swal("Haqiqatdan ham ushbu tashkilotni o'chirasizmi ?", {
+    swal("Haqiqatdan ham ushbu hisobotni o'chirasizmi ?", {
       buttons: ["Yo'q", 'Ha']
     }).then((value) => {
       if (value) {
@@ -29,12 +30,10 @@ export default function CompanyStory() {
     dispatch(getCompanyById(companyId));
   }, [dispatch, companyId]);
   const { company, notes } = useSelector((state) => state.adminReducer);
-  console.log(notes);
   let arr = [];
   arr.push(notes && notes.map((item) => parseInt(item.debit, 10) - parseInt(item.credit, 10)));
-  console.log(arr);
   return (
-    <div style={{ marginBottom: 90 }}>
+    <div style={{ marginBottom: 250 }}>
       <h2>"{company && company.name}" hisobotlari</h2>
       <div className={classes.myflex}>
         <p>
@@ -96,9 +95,14 @@ export default function CompanyStory() {
                   </div>
                   <div className={classes.founderDate}>
                     {role ? (
-                      <LoadingButton onClick={() => myFunction1(item._id)}>
-                        <Icon icon="bi:trash" width={24} height={24} />
-                      </LoadingButton>
+                      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                        <LoadingButton onClick={() => handleEdit(item, companyId)}>
+                          <Icon icon="bi:pencil" width={24} height={24} />
+                        </LoadingButton>
+                        <LoadingButton onClick={() => myFunction1(item._id)}>
+                          <Icon icon="bi:trash" width={24} height={24} />
+                        </LoadingButton>
+                      </div>
                     ) : (
                       <LoadingButton style={{ cursor: 'not-allowed' }}>
                         <Icon icon="bi:trash" width={24} height={24} />
