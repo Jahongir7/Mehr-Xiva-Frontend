@@ -1,46 +1,43 @@
 /* eslint-disable prettier/prettier */
-import { Form, Formik } from "formik";
-import { useDispatch } from "react-redux";
-import * as Yup from "yup";
-import { LoadingButton } from "@mui/lab";
-import { Stack, TextField } from "@mui/material";
-import { addCompany } from "../redux/actions/adminActions";
-import classes from "../css/AddContract.module.css";
+import { Form, Formik } from 'formik';
+import { useDispatch } from 'react-redux';
+import * as Yup from 'yup';
+import { LoadingButton } from '@mui/lab';
+import { Stack, TextField } from '@mui/material';
+import { addCompany } from '../redux/actions/adminActions';
+import classes from '../css/AddContract.module.css';
 // ----------------------------------------------------------------------
 const ValidationAddCompany = Yup.object().shape({
   name: Yup.string()
-    .required("Ism kiritilishi shart!")
+    .required('Ism kiritilishi shart!')
     .min(3, "Ism kamida 3 ta harfdan iborat bo'lishi kerak!")
-    .max(20, "Ism ko'pi bilan 20 ta harfdan iborat bo'lishi kerak!"),
+    .max(30, "Ism ko'pi bilan 20 ta harfdan iborat bo'lishi kerak!"),
   director: Yup.string()
-    .required("Ism kiritilishi shart!")
-    .min(3, "Ism kamida 3 ta harfdan iborat bo'lishi kerak!")
-    .max(20, "Ism ko'pi bilan 20 ta harfdan iborat bo'lishi kerak!"),
+    .required('Adress kiritilishi shart!')
+    .min(3, "Adress kamida 3 ta harfdan iborat bo'lishi kerak!")
+    .max(20, "Adress ko'pi bilan 20 ta harfdan iborat bo'lishi kerak!"),
   accountant: Yup.string()
-    .required("Ism kiritilishi shart!")
+    .required('Ism kiritilishi shart!')
     .min(3, "Ism kamida 3 ta harfdan iborat bo'lishi kerak!")
     .max(20, "Ism ko'pi bilan 20 ta harfdan iborat bo'lishi kerak!"),
-  companyPhone: Yup.string()
-    .required("Telefon raqam kiritilishi shart!")
-    .min(7, "Telefon raqam noto'g'ri kiritildi!")
-    .max(14, "Telefon raqam noto'g'ri kiritildi!"),
+  companyPhone: Yup.string().required("Tug'ilgan kun kiritilishi shart!"),
   accountantPhone: Yup.string()
-    .required("Telefon raqam kiritilishi shart!")
+    .required('Telefon raqam kiritilishi shart!')
     .min(7, "Telefon raqam noto'g'ri kiritildi!")
-    .max(14, "Telefon raqam noto'g'ri kiritildi!"),
+    .max(14, "Telefon raqam noto'g'ri kiritildi!")
 });
 export default function AddCompany() {
   const dispatch = useDispatch();
   return (
     <div className={classes.contract_form}>
-      <h1>Tashkilot qo'shish</h1>
+      <h1>Bola qo'shish</h1>
       <Formik
         initialValues={{
-          name: "",
-          director: "",
-          companyPhone: "",
-          accountant: "",
-          accountantPhone: "",
+          name: '',
+          director: '',
+          companyPhone: '',
+          accountant: 'Jahongir',
+          accountantPhone: '998943127774'
         }}
         onSubmit={(values, { resetForm }) => {
           dispatch(addCompany(values));
@@ -55,7 +52,7 @@ export default function AddCompany() {
                 <TextField
                   autoComplete="username"
                   type="text"
-                  label="Tashkilot nomi"
+                  label="Ism va Familiyasi"
                   value={values.name}
                   className={classes.contract_input}
                   onChange={handleChange}
@@ -64,16 +61,14 @@ export default function AddCompany() {
                   error={Boolean(touched.name && errors.name)}
                 />
                 <div className={classes.errors}>
-                  {errors.name && touched.name ? (
-                    <div>{errors.name}</div>
-                  ) : null}
+                  {errors.name && touched.name ? <div>{errors.name}</div> : null}
                 </div>
               </div>
               <div>
                 <TextField
                   autoComplete="username"
                   type="text"
-                  label="Directori"
+                  label="Adress"
                   value={values.director}
                   className={classes.contract_input}
                   onChange={handleChange}
@@ -82,16 +77,13 @@ export default function AddCompany() {
                   error={Boolean(touched.director && errors.director)}
                 />
                 <div className={classes.errors}>
-                  {errors.director && touched.director ? (
-                    <div>{errors.director}</div>
-                  ) : null}
+                  {errors.director && touched.director ? <div>{errors.director}</div> : null}
                 </div>
               </div>
               <div>
                 <TextField
                   autoComplete="username"
-                  type="text"
-                  label="Tashkilot telefon raqami"
+                  type="date"
                   value={values.companyPhone}
                   className={classes.contract_input}
                   onChange={handleChange}
@@ -108,7 +100,8 @@ export default function AddCompany() {
               <div>
                 <TextField
                   autoComplete="username"
-                  type="text"
+                  type="hidden"
+                  style={{ display: 'none' }}
                   label="Buxgalteri"
                   value={values.accountant}
                   className={classes.contract_input}
@@ -118,24 +111,21 @@ export default function AddCompany() {
                   error={Boolean(touched.accountant && errors.accountant)}
                 />
                 <div className={classes.errors}>
-                  {errors.accountant && touched.accountant ? (
-                    <div>{errors.accountant}</div>
-                  ) : null}
+                  {errors.accountant && touched.accountant ? <div>{errors.accountant}</div> : null}
                 </div>
               </div>
               <div>
                 <TextField
                   autoComplete="username"
-                  type="text"
+                  type="hidden"
                   label="Buxgalter telefon raqami"
+                  style={{ display: 'none' }}
                   value={values.accountantPhone}
                   className={classes.contract_input}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   name="accountantPhone"
-                  error={Boolean(
-                    touched.accountantPhone && errors.accountantPhone
-                  )}
+                  error={Boolean(touched.accountantPhone && errors.accountantPhone)}
                 />
                 <div className={classes.errors}>
                   {errors.accountantPhone && touched.accountantPhone ? (
@@ -148,7 +138,7 @@ export default function AddCompany() {
               size="large"
               type="submit"
               variant="contained"
-              style={{ marginLeft: "20px" }}
+              style={{ marginLeft: '20px' }}
             >
               Ma'lumotlarni yuborish
             </LoadingButton>

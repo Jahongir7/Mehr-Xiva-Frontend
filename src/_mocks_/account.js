@@ -1,14 +1,14 @@
 // ----------------------------------------------------------------------
 const account = {
   displayName: 'Asadbek Baxtiyarov',
-  photoURL: '/static/mock-images/avatars/b.png',
-  role: 'Buxgalter'
+  photoURL: '/static/illustrations/as.jpg',
+  role: 'Sayt admini'
 };
 
 export const account2 = {
   displayName: 'Sherliev Jasur',
-  photoURL: '/static/mock-images/avatars/b.png',
-  role: 'Direktor'
+  photoURL: '/static/illustrations/as.jpg',
+  role: 'Sayt admini'
 };
 
 export default account;

@@ -10,6 +10,7 @@ import PrivateRoute from './utility/PrivateRoute';
 import DashboardLayout from './layouts/dashboard';
 import { AdminRoutes, DirectorRoutes } from './routes';
 import './App.css';
+import GetBirtday from './pages/GetBirthday';
 
 export default function App() {
   return (
@@ -20,7 +21,10 @@ export default function App() {
         <BaseOptionChartStyle />
         <DashboardLayout />
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<GetBirtday />} />
+        </Routes>
+        <Routes>
+          <Route path="/login" element={<Login />} />
         </Routes>
         <div className="mainContainer">
           <Routes>

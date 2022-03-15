@@ -18,13 +18,12 @@ export const directorSidebar = [
 ];
 const sidebarConfig = [
   {
-    title: 'Tashkilotlar',
+    title: 'Bolalar',
     path: '/dashboard/companies',
     icon: <Icon icon="emojione-v1:office-building" width={22} height={22} />
   },
   {
-    title: "Tashkilot qo'shish",
-
+    title: "Bola qo'shish",
     path: '/dashboard/add-company',
     icon: <Icon icon="akar-icons:circle-plus" width={22} height={22} />
   },
