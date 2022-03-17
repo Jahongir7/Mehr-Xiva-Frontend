@@ -1,11 +1,11 @@
 /* eslint-disable prettier/prettier */
-import axios from "axios";
+import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "https://bakhtiyarov.herokuapp.com/",
+  baseURL: 'https://xivamehr.herokuapp.com/',
   headers: {
-    "Content-Type": "application/json",
-  },
+    'Content-Type': 'application/json'
+  }
 });
 
 export default api;
