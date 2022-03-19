@@ -11,15 +11,15 @@ const ValidationAddCompany = Yup.object().shape({
   name: Yup.string()
     .required('Ism kiritilishi shart!')
     .min(3, "Ism kamida 3 ta harfdan iborat bo'lishi kerak!")
-    .max(30, "Ism ko'pi bilan 20 ta harfdan iborat bo'lishi kerak!"),
+    .max(20, "Ism ko'pi bilan 20 ta harfdan iborat bo'lishi kerak!"),
   director: Yup.string()
     .required('Adress kiritilishi shart!')
     .min(3, "Adress kamida 3 ta harfdan iborat bo'lishi kerak!")
-    .max(20, "Adress ko'pi bilan 20 ta harfdan iborat bo'lishi kerak!"),
+    .max(35, "Adress ko'pi bilan 35 ta harfdan iborat bo'lishi kerak!"),
   accountant: Yup.string()
     .required('Ism kiritilishi shart!')
     .min(3, "Ism kamida 3 ta harfdan iborat bo'lishi kerak!")
-    .max(20, "Ism ko'pi bilan 20 ta harfdan iborat bo'lishi kerak!"),
+    .max(35, "Ism ko'pi bilan 35 ta harfdan iborat bo'lishi kerak!"),
   companyPhone: Yup.string().required("Tug'ilgan kun kiritilishi shart!"),
   accountantPhone: Yup.string()
     .required('Telefon raqam kiritilishi shart!')
@@ -37,7 +37,7 @@ export default function AddCompany() {
           director: '',
           companyPhone: '',
           accountant: 'Jahongir',
-          accountantPhone: '998943127774'
+          accountantPhone: ''
         }}
         onSubmit={(values, { resetForm }) => {
           dispatch(addCompany(values));
@@ -97,6 +97,25 @@ export default function AddCompany() {
                   ) : null}
                 </div>
               </div>
+
+              <div>
+                <TextField
+                  autoComplete="username"
+                  type="text"
+                  label="Telefon raqami"
+                  value={values.accountantPhone}
+                  className={classes.contract_input}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  name="accountantPhone"
+                  error={Boolean(touched.accountantPhone && errors.accountantPhone)}
+                />
+                <div className={classes.errors}>
+                  {errors.accountantPhone && touched.accountantPhone ? (
+                    <div>{errors.accountantPhone}</div>
+                  ) : null}
+                </div>
+              </div>
               <div>
                 <TextField
                   autoComplete="username"
@@ -112,25 +131,6 @@ export default function AddCompany() {
                 />
                 <div className={classes.errors}>
                   {errors.accountant && touched.accountant ? <div>{errors.accountant}</div> : null}
-                </div>
-              </div>
-              <div>
-                <TextField
-                  autoComplete="username"
-                  type="hidden"
-                  label="Buxgalter telefon raqami"
-                  style={{ display: 'none' }}
-                  value={values.accountantPhone}
-                  className={classes.contract_input}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  name="accountantPhone"
-                  error={Boolean(touched.accountantPhone && errors.accountantPhone)}
-                />
-                <div className={classes.errors}>
-                  {errors.accountantPhone && touched.accountantPhone ? (
-                    <div>{errors.accountantPhone}</div>
-                  ) : null}
                 </div>
               </div>
             </Stack>

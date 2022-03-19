@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-nested-ternary */
 // material
@@ -56,6 +57,16 @@ export default function AppWeeklySales() {
   useEffect(() => {
     dispatch(getCompany());
   }, [dispatch]);
+  const calculateAge = (dob1) => {
+    var today = new Date();
+    var birthDate = new Date(dob1);
+    var ageNow = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      ageNow -= 1;
+    }
+    return ageNow;
+  };
   return (
     <div style={{ marginBottom: 90 }}>
       {role ? (
@@ -81,22 +92,36 @@ export default function AppWeeklySales() {
         {cCompanies.map((item) => (
           <Grid item xs={12} sm={6} md={3} key={item._id}>
             <RootStyle style={{ color: '#fff' }}>
-              <Link
-                to={role ? `/dashboard/company/${item._id}` : `/director/company/${item._id}`}
-                style={{ textDecoration: 'none', color: 'white' }}
+              <Typography variant="subtitle2" style={{ color: 'white', fontSize: '23px' }}>
+                {item.name}
+              </Typography>
+              <IconWrapperStyle
+                style={{
+                  backgroundColor: 'inherit',
+                  color: '#fff',
+                  fontSize: '23px',
+                  fontWeight: 'bolder',
+                  border: 'none',
+                  boxShadow: 'inset 0px 0px 15px #f2f2f2'
+                }}
               >
-                <IconWrapperStyle
-                  style={{
-                    backgroundColor: '#C8FACD',
-                    color: 'rgb(4, 41, 122)'
-                  }}
-                >
-                  <Icon icon="fa-solid:university" width={24} height={24} />
-                </IconWrapperStyle>
-                <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
-                  {item.name}
-                </Typography>
-              </Link>
+                {Math.abs(calculateAge(item.companyPhone))}
+              </IconWrapperStyle>
+              <Typography variant="subtitle2" style={{ color: 'white', fontSize: '20px' }}>
+                Yoshda
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                style={{ color: 'white', fontSize: '18px', marginTop: '20px' }}
+              >
+                Tug'ilgan sana: {item.companyPhone}
+              </Typography>
+              <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
+                Manzil: {item.director}
+              </Typography>
+              <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
+                Telefon: {item.accountantPhone}
+              </Typography>
               {role ? (
                 <LoadingButton
                   onClick={() => myFunction1(item._id)}

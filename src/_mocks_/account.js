@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------
 const account = {
-  displayName: 'Asadbek Baxtiyarov',
+  displayName: 'Norbek Polvanov',
   photoURL: '/static/illustrations/as.jpg',
   role: 'Sayt admini'
 };
