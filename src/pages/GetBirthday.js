@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 /* eslint-disable default-case */
 /* eslint-disable no-var */
 /* eslint-disable prefer-const */
@@ -127,6 +128,49 @@ export default function GetBirtday() {
           Admin
         </LoadingButton>
       </Link>
+      <Grid
+        container
+        spacing={3}
+        justifyContent="center"
+        alignItems="center"
+        flexDirection="column"
+      >
+        {cCompanies.map((item) =>
+          calculateMonth(item.companyPhone) === 0 && calculateDay(item.companyPhone) === 0 ? (
+            <Grid item xs={12} sm={6} md={3} key={item._id}>
+              <RootStyle
+                style={{
+                  color: '#fff',
+                  backgroundColor: 'red',
+                  padding: '30px'
+                }}
+              >
+                <Typography variant="subtitle2" style={{ color: 'white', fontSize: '23px' }}>
+                  {item.name}
+                </Typography>
+
+                <Typography variant="subtitle2" style={{ color: 'white', fontSize: '20px' }}>
+                  Bugun tug'ilgan kuni 🥳
+                </Typography>
+                <Typography
+                  variant="subtitle2"
+                  style={{ color: 'white', fontSize: '18px', marginTop: '20px' }}
+                >
+                  Hozirda {calculateAge(item.companyPhone) + 1} yoshda
+                </Typography>
+                <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
+                  Manzil: {item.director}
+                </Typography>
+                <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
+                  Telefon: {item.accountantPhone}
+                </Typography>
+              </RootStyle>
+            </Grid>
+          ) : (
+            ''
+          )
+        )}
+      </Grid>
       <Typography
         variant="subtitle2"
         style={{ fontSize: '25px', marginTop: '50px', marginBottom: '50px', textAlign: 'center' }}
@@ -191,7 +235,11 @@ export default function GetBirtday() {
         variant="subtitle2"
         style={{ fontSize: '25px', marginTop: '50px', marginBottom: '50px', textAlign: 'center' }}
       >
-        Tug'ilgan kuni ortda qolganlar
+        {cCompanies.map((item) =>
+          calculateMonth(item.companyPhone) === 0 && calculateDay(item.companyPhone) < 0
+            ? "Tug'ilgan kuni ortda qolganlar"
+            : ''
+        )}{' '}
       </Typography>
       <Grid
         container
