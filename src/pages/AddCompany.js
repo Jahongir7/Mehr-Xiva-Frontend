@@ -17,8 +17,8 @@ const ValidationAddCompany = Yup.object().shape({
     .min(3, "Adress kamida 3 ta harfdan iborat bo'lishi kerak!")
     .max(35, "Adress ko'pi bilan 35 ta harfdan iborat bo'lishi kerak!"),
   accountant: Yup.string()
-    .required('Ism kiritilishi shart!')
-    .min(3, "Ism kamida 3 ta harfdan iborat bo'lishi kerak!"),
+    .required('Lokatsiya kiritilishi shart!')
+    .min(3, "Lokatsiya kamida 3 ta harfdan iborat bo'lishi kerak!"),
   companyPhone: Yup.string().required("Tug'ilgan kun kiritilishi shart!"),
   accountantPhone: Yup.string()
     .required('Telefon raqam kiritilishi shart!')
