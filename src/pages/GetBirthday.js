@@ -185,9 +185,9 @@ export default function GetBirtday() {
                     Lokatsiya{' '}
                     <Icon
                       icon="carbon:location-filled"
-                      width={24}
-                      height={24}
-                      style={{ color: 'red' }}
+                      width={20}
+                      height={20}
+                      style={{ color: 'red', marginBottom: 0 }}
                     />
                   </a>
                 </LoadingButton>
@@ -272,9 +272,9 @@ export default function GetBirtday() {
                     Lokatsiya{' '}
                     <Icon
                       icon="carbon:location-filled"
-                      width={24}
-                      height={24}
-                      style={{ color: 'red' }}
+                      width={20}
+                      height={20}
+                      style={{ color: 'red', marginBottom: 0 }}
                     />
                   </a>
                 </LoadingButton>
@@ -363,9 +363,9 @@ export default function GetBirtday() {
                     Lokatsiya{' '}
                     <Icon
                       icon="carbon:location-filled"
-                      width={24}
-                      height={24}
-                      style={{ color: 'red' }}
+                      width={20}
+                      height={20}
+                      style={{ color: 'red', marginBottom: 0 }}
                     />
                   </a>
                 </LoadingButton>

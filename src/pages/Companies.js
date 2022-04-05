@@ -143,8 +143,8 @@ export default function AppWeeklySales() {
                   Lokatsiya{' '}
                   <Icon
                     icon="carbon:location-filled"
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                     style={{ color: 'red' }}
                   />
                 </a>
