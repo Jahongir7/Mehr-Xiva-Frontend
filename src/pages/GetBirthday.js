@@ -7,6 +7,7 @@
 // material
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Icon } from '@iconify/react';
 import { LoadingButton } from '@mui/lab';
 import { useDispatch, useSelector } from 'react-redux';
 import { styled } from '@mui/material/styles';
@@ -148,7 +149,6 @@ export default function GetBirtday() {
                 <Typography variant="subtitle2" style={{ color: 'white', fontSize: '23px' }}>
                   {item.name}
                 </Typography>
-
                 <Typography variant="subtitle2" style={{ color: 'white', fontSize: '20px' }}>
                   Bugun tug'ilgan kuni 🥳
                 </Typography>
@@ -163,7 +163,34 @@ export default function GetBirtday() {
                 </Typography>
                 <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
                   Telefon: {item.accountantPhone}
-                </Typography>
+                </Typography>{' '}
+                <LoadingButton
+                  style={{
+                    marginTop: '20px',
+                    color: 'white',
+                    backgroundColor: 'white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '90%',
+                    margin: '20px auto'
+                  }}
+                >
+                  <a
+                    href={item.accountant}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ textDecoration: 'none', fontSize: '24px' }}
+                  >
+                    Lokatsiya{' '}
+                    <Icon
+                      icon="carbon:location-filled"
+                      width={24}
+                      height={24}
+                      style={{ color: 'red' }}
+                    />
+                  </a>
+                </LoadingButton>
               </RootStyle>
             </Grid>
           ) : (
@@ -223,7 +250,34 @@ export default function GetBirtday() {
                 </Typography>
                 <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
                   Telefon: {item.accountantPhone}
-                </Typography>
+                </Typography>{' '}
+                <LoadingButton
+                  style={{
+                    marginTop: '20px',
+                    color: 'white',
+                    backgroundColor: 'white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '90%',
+                    margin: '20px auto'
+                  }}
+                >
+                  <a
+                    href={item.accountant}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ textDecoration: 'none', fontSize: '24px' }}
+                  >
+                    Lokatsiya{' '}
+                    <Icon
+                      icon="carbon:location-filled"
+                      width={24}
+                      height={24}
+                      style={{ color: 'red' }}
+                    />
+                  </a>
+                </LoadingButton>
               </RootStyle>
             </Grid>
           ) : (
@@ -288,6 +342,33 @@ export default function GetBirtday() {
                 <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
                   Telefon: {item.accountantPhone}
                 </Typography>
+                <LoadingButton
+                  style={{
+                    marginTop: '20px',
+                    color: 'white',
+                    backgroundColor: 'white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '90%',
+                    margin: '20px auto'
+                  }}
+                >
+                  <a
+                    href={item.accountant}
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ textDecoration: 'none', fontSize: '24px' }}
+                  >
+                    Lokatsiya{' '}
+                    <Icon
+                      icon="carbon:location-filled"
+                      width={24}
+                      height={24}
+                      style={{ color: 'red' }}
+                    />
+                  </a>
+                </LoadingButton>
               </RootStyle>
             </Grid>
           ) : (

@@ -122,6 +122,33 @@ export default function AppWeeklySales() {
               <Typography variant="subtitle2" style={{ color: 'white', fontSize: '18px' }}>
                 Telefon: {item.accountantPhone}
               </Typography>
+              <LoadingButton
+                style={{
+                  marginTop: '20px',
+                  color: 'white',
+                  backgroundColor: 'white',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '90%',
+                  margin: '20px auto'
+                }}
+              >
+                <a
+                  href={item.accountant}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ textDecoration: 'none', fontSize: '24px' }}
+                >
+                  Lokatsiya{' '}
+                  <Icon
+                    icon="carbon:location-filled"
+                    width={24}
+                    height={24}
+                    style={{ color: 'red' }}
+                  />
+                </a>
+              </LoadingButton>
               {role ? (
                 <LoadingButton
                   onClick={() => myFunction1(item._id)}

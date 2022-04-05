@@ -18,8 +18,7 @@ const ValidationAddCompany = Yup.object().shape({
     .max(35, "Adress ko'pi bilan 35 ta harfdan iborat bo'lishi kerak!"),
   accountant: Yup.string()
     .required('Ism kiritilishi shart!')
-    .min(3, "Ism kamida 3 ta harfdan iborat bo'lishi kerak!")
-    .max(35, "Ism ko'pi bilan 35 ta harfdan iborat bo'lishi kerak!"),
+    .min(3, "Ism kamida 3 ta harfdan iborat bo'lishi kerak!"),
   companyPhone: Yup.string().required("Tug'ilgan kun kiritilishi shart!"),
   accountantPhone: Yup.string()
     .required('Telefon raqam kiritilishi shart!')
@@ -36,7 +35,7 @@ export default function AddCompany() {
           name: '',
           director: '',
           companyPhone: '',
-          accountant: 'Jahongir',
+          accountant: '',
           accountantPhone: ''
         }}
         onSubmit={(values, { resetForm }) => {
@@ -119,9 +118,8 @@ export default function AddCompany() {
               <div>
                 <TextField
                   autoComplete="username"
-                  type="hidden"
-                  style={{ display: 'none' }}
-                  label="Buxgalteri"
+                  type="text"
+                  label="Lokatsiya"
                   value={values.accountant}
                   className={classes.contract_input}
                   onChange={handleChange}
