@@ -24,6 +24,11 @@ const sidebarConfig = [
     title: "Bola qo'shish",
     path: '/dashboard/add-company',
     icon: <Icon icon="akar-icons:circle-plus" width={22} height={22} />
+  },
+  {
+    title: "Umumiy ro'yhat",
+    path: '/dashboard/list',
+    icon: <Icon icon="clarity:list-solid-badged" width={22} height={22} />
   }
 ];
 

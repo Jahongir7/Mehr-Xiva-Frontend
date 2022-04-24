@@ -1,24 +1,20 @@
-import api from "../../utility/api";
-import {
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  LOGOUT,
-  USER_LOADED,
-  CLEAR_STORE,
-} from "../types";
+import api from '../../utility/api';
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, USER_LOADED, CLEAR_STORE } from '../types';
+import { setAlert } from '../../utility/setAlert';
 
 export const login = (body) => async (dispatch) => {
   try {
     const res = await api.post(`/login`, body);
-
+    setAlert('Muvaffaqiyatli kirildi!', 'success');
     dispatch({
       type: LOGIN_SUCCESS,
-      payload: res.data,
+      payload: res.data
     });
   } catch (err) {
+    setAlert('Noto`g`ri ma`lumot kiritildi!', 'error');
     console.log(err);
     dispatch({
-      type: LOGIN_FAIL,
+      type: LOGIN_FAIL
     });
   }
 };
@@ -29,11 +25,11 @@ export const loadUser = () => async (dispatch) => {
 
     dispatch({
       type: USER_LOADED,
-      payload: res.data,
+      payload: res.data
     });
   } catch (err) {
     dispatch({
-      type: LOGIN_FAIL,
+      type: LOGIN_FAIL
     });
   }
 };

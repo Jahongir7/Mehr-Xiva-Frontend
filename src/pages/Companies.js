@@ -51,6 +51,7 @@ export default function AppWeeklySales() {
     }).then((value) => {
       if (value) {
         dispatch(deleteCompany(id));
+        dispatch(getCompany());
       }
     });
   }
